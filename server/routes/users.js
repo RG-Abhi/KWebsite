@@ -48,5 +48,11 @@ router.put('/:id', authMiddleware, requireRole(ROLES.super_admin), async (req, r
   await logAudit({ action: 'user.update', entityType: 'user', entityId: req.params.id, user: req.user })
   res.json({ success: true, user })
 })
+router.delete('/:id', authMiddleware, requireRole(ROLES.super_admin), async (req, res) => {
+  const user = await User.findByIdAndDelete(req.params.id)
+  if (!user) return res.status(404).json({ message: 'User not found' })
+  await logAudit({ action: 'user.delete', entityType: 'user', entityId: req.params.id, user: req.user, meta: { username: user.username } })
+  res.json({ success: true })
+})
 
 export default router

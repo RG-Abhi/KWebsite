@@ -53,38 +53,44 @@ export default function SettingsModule({ subTab, setSubTab }) {
       )}
 
       {subTab === 'home' && data.homeContent && (
-        <div className="admin-grid-edit">
+        <div className="admin-grid-edit" style={{ display: 'grid', gap: '2rem', gridTemplateColumns: '1fr' }}>
           <div className="admin-card">
             <h3>Welcome section</h3>
-            <input value={data.homeContent.welcome.eyebrow} onChange={(e) => deepUpdate('homeContent.welcome.eyebrow', e.target.value)} placeholder="Eyebrow" />
-            <input value={data.homeContent.welcome.title} onChange={(e) => deepUpdate('homeContent.welcome.title', e.target.value)} placeholder="Title" />
-            <textarea value={data.homeContent.welcome.text} onChange={(e) => deepUpdate('homeContent.welcome.text', e.target.value)} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem' }}>
+              <input value={data.homeContent.welcome.eyebrow} onChange={(e) => deepUpdate('homeContent.welcome.eyebrow', e.target.value)} placeholder="Eyebrow" style={{ width: '100%' }} />
+              <input value={data.homeContent.welcome.title} onChange={(e) => deepUpdate('homeContent.welcome.title', e.target.value)} placeholder="Title" style={{ width: '100%' }} />
+              <textarea value={data.homeContent.welcome.text} onChange={(e) => deepUpdate('homeContent.welcome.text', e.target.value)} style={{ width: '100%', minHeight: '100px' }} />
+            </div>
           </div>
           <div className="admin-card">
             <h3>Why Choose tiles</h3>
-            {data.whyChoose?.map((tile, i) => (
-              <div key={i} className="cms-block-item">
-                <input value={tile.title} onChange={(e) => {
-                  const next = [...data.whyChoose]; next[i] = { ...tile, title: e.target.value }; deepUpdate('whyChoose', next)
-                }} />
-                <textarea value={tile.desc} onChange={(e) => {
-                  const next = [...data.whyChoose]; next[i] = { ...tile, desc: e.target.value }; deepUpdate('whyChoose', next)
-                }} />
-              </div>
-            ))}
+            <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', marginTop: '1rem' }}>
+              {data.whyChoose?.map((tile, i) => (
+                <div key={i} className="cms-block-item" style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '12px', border: '1px solid #f1f5f9', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <input value={tile.title} onChange={(e) => {
+                    const next = [...data.whyChoose]; next[i] = { ...tile, title: e.target.value }; deepUpdate('whyChoose', next)
+                  }} style={{ width: '100%', fontWeight: 600 }} />
+                  <textarea value={tile.desc} onChange={(e) => {
+                    const next = [...data.whyChoose]; next[i] = { ...tile, desc: e.target.value }; deepUpdate('whyChoose', next)
+                  }} style={{ width: '100%', minHeight: '80px' }} />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="admin-card">
             <h3>Hero slides</h3>
-            {data.heroSlides?.map((slide, i) => (
-              <div key={i} className="cms-block-item">
-                <input value={slide.title} placeholder="Title" onChange={(e) => {
-                  const next = [...data.heroSlides]; next[i] = { ...slide, title: e.target.value }; updateData('heroSlides', next)
-                }} />
-                <input value={slide.subtitle || ''} placeholder="Subtitle" onChange={(e) => {
-                  const next = [...data.heroSlides]; next[i] = { ...slide, subtitle: e.target.value }; updateData('heroSlides', next)
-                }} />
-              </div>
-            ))}
+            <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', marginTop: '1rem' }}>
+              {data.heroSlides?.map((slide, i) => (
+                <div key={i} className="cms-block-item" style={{ background: '#f8fafc', padding: '1.5rem', borderRadius: '12px', border: '1px solid #f1f5f9', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <input value={slide.title} placeholder="Title" onChange={(e) => {
+                    const next = [...data.heroSlides]; next[i] = { ...slide, title: e.target.value }; updateData('heroSlides', next)
+                  }} style={{ width: '100%', fontWeight: 600 }} />
+                  <input value={slide.subtitle || ''} placeholder="Subtitle" onChange={(e) => {
+                    const next = [...data.heroSlides]; next[i] = { ...slide, subtitle: e.target.value }; updateData('heroSlides', next)
+                  }} style={{ width: '100%' }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
@@ -115,14 +121,76 @@ export default function SettingsModule({ subTab, setSubTab }) {
               {Object.values(ROLES).map((r) => <option key={r} value={r}>{r}</option>)}
             </select>
           </div>
+          <div style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1rem', fontStyle: 'italic' }}>
+            {newUser.role === 'super_admin' && 'Super Admin: Has full access to all modules and user management.'}
+            {newUser.role === 'department_hod' && 'HOD: Can only edit their respective department page and faculty.'}
+            {newUser.role === 'content_editor' && 'Content Editor: Can manage notices, events, and dynamic pages.'}
+            {newUser.role === 'exam_branch' && 'Exam Branch: Can manage exam schedules and notifications.'}
+            {newUser.role === 'placement_officer' && 'Placement Officer: Can manage recruiter logos and placement statistics.'}
+          </div>
           <button type="button" className="add-btn" onClick={async () => {
-            await adminApi.users.create(newUser)
-            setNewUser({ username: '', password: '', role: 'content_editor', displayName: '' })
-            adminApi.users.list().then(setUsers)
+            if (newUser.username.length < 3) return alert('Username must be at least 3 characters');
+            if (newUser.password.length < 6) return alert('Password must be at least 6 characters');
+            if (!newUser.displayName) return alert('Display name is required');
+            try {
+              await adminApi.users.create(newUser)
+              setNewUser({ username: '', password: '', role: 'content_editor', displayName: '' })
+              adminApi.users.list().then(setUsers)
+            } catch (err) {
+              alert(err.message || 'Failed to create user');
+            }
           }}>Create user</button>
           <ul className="cms-user-list">
             {users.map((u) => (
-              <li key={u._id}><strong>{u.username}</strong> — {u.role} {u.departmentId && `(${u.departmentId})`}</li>
+              <li key={u._id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <strong>{u.username}</strong> — {u.role} {u.departmentId && `(${u.departmentId})`}
+                  {!u.active && <span style={{ marginLeft: '8px', color: 'red', fontSize: '0.8rem', fontWeight: 'bold' }}>[Suspended]</span>}
+                </div>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <button 
+                    type="button" 
+                    onClick={async () => {
+                      if (u.username === 'admin') return alert('Cannot modify legacy admin');
+                      await adminApi.users.update(u._id, { active: !u.active });
+                      adminApi.users.list().then(setUsers);
+                    }}
+                    style={{
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                      border: '1px solid #ccc',
+                      background: u.active ? '#fee2e2' : '#dcfce7',
+                      color: u.active ? '#991b1b' : '#166534',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    {u.active ? 'Suspend' : 'Activate'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={async () => {
+                      if (u.username === 'admin') return alert('Cannot modify legacy admin');
+                      if (!confirm(`Are you sure you want to permanently delete ${u.username}?`)) return;
+                      await adminApi.users.remove(u._id);
+                      adminApi.users.list().then(setUsers);
+                    }}
+                    style={{
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                      border: '1px solid #ef4444',
+                      background: '#ef4444',
+                      color: '#ffffff',
+                      cursor: 'pointer',
+                      fontSize: '0.8rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </li>
             ))}
           </ul>
         </div>

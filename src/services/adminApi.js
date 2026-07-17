@@ -81,6 +81,7 @@ export const adminApi = {
     list: () => api('/api/users'),
     create: (data) => api('/api/users', { method: 'POST', body: JSON.stringify(data) }),
     update: (id, data) => api(`/api/users/${id}`, { method: 'PUT', body: JSON.stringify(data) }),
+    remove: (id) => api(`/api/users/${id}`, { method: 'DELETE' }),
   },
 }
 

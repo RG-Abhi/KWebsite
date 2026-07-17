@@ -1,11 +1,19 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import rateLimit from 'express-rate-limit';
 import User from '../models/User.js';
+import { logAudit } from '../lib/audit.js';
 
 const router = express.Router();
 
-router.post('/login', async (req, res) => {
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // Limit each IP to 5 login requests per windowMs
+  message: { success: false, message: 'Too many login attempts from this IP, please try again after 15 minutes.' }
+});
+
+router.post('/login', loginLimiter, async (req, res) => {
   const { username, password } = req.body;
 
   const user = await User.findOne({ username, active: true });
@@ -21,6 +29,7 @@ router.post('/login', async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
+    await logAudit({ action: 'auth.login_success', entityType: 'user', entityId: user._id, user });
     return res.json({
       success: true,
       token,
@@ -44,6 +53,7 @@ router.post('/login', async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
+    await logAudit({ action: 'auth.login_success', entityType: 'user', entityId: 'legacy_admin', user: { username } });
     return res.json({
       success: true,
       token,
@@ -51,6 +61,7 @@ router.post('/login', async (req, res) => {
     });
   }
 
+  await logAudit({ action: 'auth.login_failed', entityType: 'user', entityId: username, meta: { reason: 'Invalid credentials' } });
   return res.status(401).json({ success: false, message: 'Invalid credentials' });
 });
 
@@ -60,6 +71,10 @@ router.post('/verify', async (req, res) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (decoded.username !== 'admin') {
+      const user = await User.findOne({ username: decoded.username, active: true });
+      if (!user) return res.json({ valid: false });
+    }
     return res.json({ valid: true, user: decoded });
   } catch {
     return res.json({ valid: false });

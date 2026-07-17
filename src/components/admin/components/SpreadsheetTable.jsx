@@ -152,16 +152,16 @@ export default function SpreadsheetTable({
             placeholder="New Column Label..."
             value={newColName}
             onChange={(e) => setNewColName(e.target.value)}
-            style={{ padding: '0.5rem 0.75rem', fontSize: '0.85rem', maxWidth: '180px', margin: 0 }}
+            style={{ maxWidth: '200px' }}
           />
-          <button type="button" className="add-btn" onClick={handleAddColumn} style={{ margin: 0, padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
+          <button type="button" className="add-btn" onClick={handleAddColumn}>
             + Add Col
           </button>
         </div>
 
         {/* CSV import/export buttons */}
         <div style={{ display: 'flex', gap: '8px' }}>
-          <button type="button" className="reset-btn" onClick={() => csvInputRef.current?.click()} style={{ padding: '0.5rem 1rem', margin: 0, fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', color: '#475569', border: 'none' }}>
+          <button type="button" className="reset-btn" onClick={() => csvInputRef.current?.click()}>
             <i className="fa-solid fa-file-import" /> Import CSV
           </button>
           <input
@@ -172,7 +172,7 @@ export default function SpreadsheetTable({
             style={{ display: 'none' }}
           />
           
-          <button type="button" className="reset-btn" onClick={handleExportCSV} disabled={!rows.length} style={{ padding: '0.5rem 1rem', margin: 0, fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px', background: '#f1f5f9', color: '#475569', border: 'none', opacity: rows.length ? 1 : 0.5 }}>
+          <button type="button" className="reset-btn" onClick={handleExportCSV} disabled={!rows.length} style={{ opacity: rows.length ? 1 : 0.5 }}>
             <i className="fa-solid fa-file-export" /> Export CSV
           </button>
         </div>
@@ -189,11 +189,11 @@ export default function SpreadsheetTable({
         <div className="sheet-wrap">
           <table className="sheet-table">
             <thead>
-              <tr style={{ background: '#f8fafc' }}>
+              <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                 {columns.map((col) => (
-                  <th key={col.key} style={{ padding: '8px', verticalAlign: 'middle', whiteSpace: 'nowrap' }}>
+                  <th key={col.key} style={{ padding: '12px 16px', verticalAlign: 'middle', whiteSpace: 'nowrap', textAlign: 'left' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                      <span>{col.label}</span>
+                      <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{col.label}</span>
                       <button
                         type="button"
                         onClick={() => handleRemoveColumn(col.key, col.label)}
@@ -205,7 +205,7 @@ export default function SpreadsheetTable({
                     </div>
                   </th>
                 ))}
-                <th style={{ width: '130px', textAlign: 'center' }}>Row Action</th>
+                <th style={{ width: '130px', textAlign: 'center', padding: '12px 16px', fontSize: '0.75rem', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Actions</th>
               </tr>
             </thead>
             <tbody>

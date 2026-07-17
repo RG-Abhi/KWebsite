@@ -24,25 +24,40 @@ export default function PeopleModule() {
   }))
 
   return (
-    <div className="cms-module">
-      <div className="admin-card">
-        <h3>Faculty directory</h3>
-        <div className="cms-form-grid">
-          <input placeholder="Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-          <input placeholder="Designation" value={form.designation} onChange={(e) => setForm({ ...form, designation: e.target.value })} />
-          <select value={form.departmentId} onChange={(e) => setForm({ ...form, departmentId: e.target.value })} disabled={!!user?.departmentId}>
-            {DEPTS.map((d) => <option key={d} value={d}>{d.toUpperCase()}</option>)}
-          </select>
-          <input placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-          <input placeholder="Photo URL" value={form.photoUrl} onChange={(e) => setForm({ ...form, photoUrl: e.target.value })} />
+    <div className="cms-module" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      <div className="admin-card" style={{ padding: '2rem', background: '#FEFEFF', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)', border: '1px solid rgba(0,0,0,0.02)' }}>
+        <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1f2937', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ width: '4px', height: '20px', background: '#DF5305', borderRadius: '4px' }} />
+          Faculty Directory
+        </h3>
+        <div className="cms-form-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
+          <div className="form-group">
+            <input placeholder="Full Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} style={{ width: '100%' }} />
+          </div>
+          <div className="form-group">
+            <input placeholder="Designation" value={form.designation} onChange={(e) => setForm({ ...form, designation: e.target.value })} style={{ width: '100%' }} />
+          </div>
+          <div className="form-group">
+            <select value={form.departmentId} onChange={(e) => setForm({ ...form, departmentId: e.target.value })} disabled={!!user?.departmentId} style={{ width: '100%' }}>
+              {DEPTS.map((d) => <option key={d} value={d}>{d.toUpperCase()}</option>)}
+            </select>
+          </div>
+          <div className="form-group">
+            <input placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} style={{ width: '100%' }} />
+          </div>
+          <div className="form-group">
+            <input placeholder="Photo URL" value={form.photoUrl} onChange={(e) => setForm({ ...form, photoUrl: e.target.value })} style={{ width: '100%' }} />
+          </div>
         </div>
         <button type="button" className="add-btn" onClick={async () => {
           await adminApi.faculty.create(form)
           setForm({ name: '', designation: '', departmentId: user?.departmentId || 'cse', email: '', photoUrl: '' })
           load()
-        }}>Add faculty</button>
+        }} style={{ padding: '0.6rem 1.2rem', display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+          <i className="fa-solid fa-user-plus" /> Add Faculty Member
+        </button>
       </div>
-      <div className="admin-card">
+      <div className="admin-card" style={{ padding: '0', background: '#FEFEFF', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)', border: '1px solid rgba(0,0,0,0.02)', overflow: 'hidden' }}>
         <SpreadsheetTable
           columns={[
             { key: 'name', label: 'Name' },

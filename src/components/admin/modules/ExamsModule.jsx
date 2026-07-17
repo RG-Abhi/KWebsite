@@ -206,7 +206,7 @@ export default function ExamsModule({ showToast }) {
 
       {/* Filter panel */}
       <div className="admin-card" style={{ marginBottom: '1.5rem', padding: '1.25rem 2rem' }}>
-        <div className="cms-form-grid" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr', alignItems: 'center', gap: '1rem', marginBottom: 0 }}>
+        <div className="cms-form-grid" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr', alignItems: 'flex-end', gap: '1rem', marginBottom: 0 }}>
           <div className="form-group" style={{ marginBottom: 0 }}>
             <label style={{ marginBottom: '4px' }}>Search Exams</label>
             <input
@@ -214,27 +214,26 @@ export default function ExamsModule({ showToast }) {
               placeholder="Search by title, category..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              style={{ padding: '0.6rem 0.85rem', fontSize: '0.9rem' }}
             />
           </div>
           <div className="form-group" style={{ marginBottom: 0 }}>
             <label style={{ marginBottom: '4px' }}>Circular Category</label>
-            <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)} style={{ padding: '0.6rem 0.85rem' }}>
+            <select value={categoryFilter} onChange={(e) => setCategoryFilter(e.target.value)}>
               <option value="All">All Categories</option>
               {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           <div className="form-group" style={{ marginBottom: 0 }}>
             <label style={{ marginBottom: '4px' }}>Publish Status</label>
-            <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)} style={{ padding: '0.6rem 0.85rem' }}>
+            <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
               <option value="All">All Statuses</option>
               <option value="Active">Active (Live)</option>
               <option value="Expired">Expired</option>
               <option value="Archived">Archived</option>
             </select>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', paddingTop: '1.2rem' }}>
-            <button type="button" className="reset-btn" onClick={() => { setSearch(''); setCategoryFilter('All'); setStatusFilter('All') }} style={{ padding: '0.6rem 1rem', width: 'auto', background: '#f1f5f9', color: '#475569', border: 'none' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <button type="button" className="reset-btn" onClick={() => { setSearch(''); setCategoryFilter('All'); setStatusFilter('All') }}>
               Clear Filters
             </button>
           </div>
@@ -254,14 +253,14 @@ export default function ExamsModule({ showToast }) {
           <div className="sheet-wrap">
             <table className="sheet-table" style={{ border: 'none' }}>
               <thead>
-                <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e8f0' }}>
-                  <th style={{ padding: '1rem', width: '80px', textAlign: 'center' }}>Status</th>
-                  <th style={{ padding: '1rem', width: '130px' }}>Category</th>
-                  <th style={{ padding: '1rem' }}>Title</th>
-                  <th style={{ padding: '1rem', width: '120px' }}>Publish Date</th>
-                  <th style={{ padding: '1rem', width: '120px' }}>Expiry Date</th>
-                  <th style={{ padding: '1rem', width: '180px' }}>Attached Files / Links</th>
-                  <th style={{ padding: '1rem', width: '150px', textAlign: 'right' }}>Actions</th>
+                <tr>
+                  <th style={{ width: '80px', textAlign: 'center' }}>Status</th>
+                  <th style={{ width: '130px' }}>Category</th>
+                  <th>Title</th>
+                  <th style={{ width: '120px' }}>Publish Date</th>
+                  <th style={{ width: '120px' }}>Expiry Date</th>
+                  <th style={{ width: '180px' }}>Attached Files / Links</th>
+                  <th style={{ width: '150px', textAlign: 'right' }}>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -323,7 +322,7 @@ export default function ExamsModule({ showToast }) {
         <div className="admin-login-page" style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(15, 23, 42, 0.65)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100000, backdropFilter: 'blur(4px)' }}>
           <div className="login-card" style={{ maxWidth: '640px', padding: '2.5rem', borderRadius: '16px', position: 'relative' }}>
             <button type="button" onClick={() => setModalOpen(false)} style={{ position: 'absolute', top: '1.25rem', right: '1.5rem', background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#94a3b8' }}>&times;</button>
-            <h3 style={{ color: 'var(--navy)', fontSize: '1.4rem', fontWeight: 800, marginBottom: '1.5rem', borderBottom: '1px solid #f1f5f9', paddingBottom: '0.75rem' }}>
+            <h3 style={{ color: 'var(--navy)', fontSize: '1.4rem', fontWeight: 600, marginBottom: '1.5rem', borderBottom: '1px solid #f1f5f9', paddingBottom: '0.75rem' }}>
               {editingExam ? 'Edit Exam Circular' : 'Create Exam Circular'}
             </h3>
             
@@ -384,7 +383,7 @@ export default function ExamsModule({ showToast }) {
                     style={{ flex: 1 }}
                   />
                   <div style={{ position: 'relative' }}>
-                    <button type="button" className="add-btn" style={{ margin: 0, padding: '0.8rem 1.25rem' }}>
+                    <button type="button" className="add-btn">
                       <i className="fa-solid fa-upload" /> Upload File
                     </button>
                     <input
@@ -424,10 +423,10 @@ export default function ExamsModule({ showToast }) {
               </div>
 
               <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end', marginTop: '1.5rem', borderTop: '1px solid #f1f5f9', paddingTop: '1.25rem' }}>
-                <button type="button" className="reset-btn" onClick={() => setModalOpen(false)} style={{ width: 'auto', background: '#f1f5f9', color: '#475569', border: 'none', margin: 0, padding: '0.8rem 1.5rem' }}>
+                <button type="button" className="reset-btn" onClick={() => setModalOpen(false)}>
                   Cancel
                 </button>
-                <button type="submit" className="add-btn" style={{ margin: 0, padding: '0.8rem 2rem' }}>
+                <button type="submit" className="add-btn">
                   <i className="fa-solid fa-floppy-disk" /> Save Record
                 </button>
               </div>

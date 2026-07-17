@@ -88,7 +88,7 @@ export default function AdminShell() {
   }
 
   return (
-    <div className="admin-dashboard cms-shell" style={{ display: 'flex', minHeight: '100vh', background: '#f8fafc' }}>
+    <div className="admin-dashboard cms-shell" style={{ display: 'flex', height: '100vh', overflow: 'hidden', background: '#f8fafc', fontFamily: 'var(--font-sans)' }}>
       
       {/* Toast Notification */}
       {toast && (
@@ -108,29 +108,11 @@ export default function AdminShell() {
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
-            fontWeight: 600,
-            animation: 'spaFadeIn 0.3s ease both',
-            fontSize: '0.9rem',
-            borderLeft: `4px solid ${toast.type === 'error' ? '#fca5a5' : '#f17f08'}`,
+            animation: 'spaSlideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both'
           }}
         >
-          <i className={`fa-solid ${toast.type === 'error' ? 'fa-triangle-exclamation' : 'fa-circle-check'}`} />
-          <span>{toast.message}</span>
-          <button
-            onClick={() => setToast(null)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#fff',
-              opacity: 0.7,
-              cursor: 'pointer',
-              padding: 0,
-              marginLeft: '8px',
-              fontSize: '1.1rem',
-            }}
-          >
-            &times;
-          </button>
+          <i className={`fa-solid ${toast.type === 'error' ? 'fa-circle-exclamation' : 'fa-circle-check'}`} />
+          <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>{toast.message}</span>
         </div>
       )}
 
@@ -139,55 +121,47 @@ export default function AdminShell() {
         className={`admin-sidebar cms-sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}
         style={{
           width: sidebarCollapsed ? '80px' : '280px',
-          background: 'var(--navy)',
-          color: '#fff',
+          background: '#111827',
+          color: '#f8fafc',
           display: 'flex',
           flexDirection: 'column',
-          position: 'sticky',
-          top: 0,
-          height: '100vh',
+          height: '100%',
           flexShrink: 0,
           transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           overflowX: 'hidden',
-          boxShadow: '4px 0 20px rgba(15,23,42,0.05)',
+          borderRight: 'none',
+          boxShadow: '4px 0 20px rgba(0, 0, 0, 0.05)',
         }}
       >
         <div
           className="admin-logo"
           style={{
-            padding: '1.25rem 1rem',
+            padding: '1.25rem 1.25rem',
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
-            borderBottom: '1px solid rgba(255,255,255,0.06)',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
             whiteSpace: 'nowrap',
           }}
         >
-          <img
-            src="/logo.png"
-            alt="KMIT"
-            onError={(e) => {
-              e.target.src = 'https://api.dicebear.com/9.x/initials/svg?seed=KMIT'
-            }}
-            style={{ height: '36px', width: '36px', objectFit: 'contain', flexShrink: 0 }}
-          />
+          <div style={{ width: '36px', height: '36px', background: '#DF5305', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FEFEFF', fontSize: '1.2rem', flexShrink: 0 }}>
+            <i className="fa-solid fa-graduation-cap" />
+          </div>
           {!sidebarCollapsed && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', animation: 'spaFadeIn 0.2s ease both' }}>
-              <span style={{ fontWeight: 800, fontSize: '1.05rem', letterSpacing: '-0.5px', color: '#fff' }}>KMIT CMS</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', animation: 'spaFadeIn 0.2s ease both' }}>
+              <span style={{ fontWeight: 600, fontSize: '1.1rem', letterSpacing: '-0.3px', color: '#f8fafc' }}>KMIT CMS</span>
               <span style={{
-                fontSize: '0.65rem',
-                fontWeight: 750,
-                background: 'rgba(244, 63, 94, 0.15)',
-                color: '#f43f5e',
+                fontSize: '0.7rem',
+                fontWeight: 500,
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: '#e2e8f0',
                 padding: '2px 8px',
                 borderRadius: '12px',
                 alignSelf: 'flex-start',
-                border: '1px solid rgba(244, 63, 94, 0.25)',
-                textTransform: 'uppercase',
                 letterSpacing: '0.5px',
-                lineHeight: 1.2
+                textTransform: 'capitalize'
               }}>
-                {user?.displayName || user?.username}
+                {user?.role?.replace(/_/g, ' ') || 'Admin'}
               </span>
             </div>
           )}
@@ -213,27 +187,37 @@ export default function AdminShell() {
               onClick={() => setModule(key)}
               title={sidebarCollapsed ? MODULE_LABELS[key] : ''}
               style={{
-                background: module === key ? 'var(--crimson)' : 'none',
-                color: module === key ? '#fff' : 'rgba(255,255,255,0.7)',
+                background: 'transparent',
+                color: module === key ? '#DF5305' : '#9ca3af',
                 padding: '0.85rem 1.2rem',
                 display: 'flex',
                 alignItems: 'center',
-                gap: sidebarCollapsed ? '0' : '12px',
+                gap: sidebarCollapsed ? '0' : '14px',
                 justifyContent: sidebarCollapsed ? 'center' : 'flex-start',
                 fontFamily: 'var(--font-sans)',
                 fontSize: '0.9rem',
-                fontWeight: 600,
+                fontWeight: module === key ? 600 : 400,
                 borderRadius: '8px',
                 cursor: 'pointer',
-                transition: 'all 0.2s, gap 0.3s',
+                transition: 'all 0.2s',
                 textAlign: 'left',
                 border: 'none',
                 width: '100%',
               }}
+              onMouseEnter={(e) => {
+                if (module !== key) {
+                  e.currentTarget.style.color = '#f3f4f6'
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (module !== key) {
+                  e.currentTarget.style.color = '#9ca3af'
+                }
+              }}
             >
               <i
                 className={`fa-solid ${MODULE_ICONS[key]}`}
-                style={{ width: '20px', fontSize: '1.1rem', textAlign: 'center' }}
+                style={{ width: '20px', fontSize: '1.1rem', textAlign: 'center', color: module === key ? '#DF5305' : '#6b7280' }}
               />
               {!sidebarCollapsed && <span style={{ animation: 'spaFadeIn 0.25s ease both' }}>{MODULE_LABELS[key]}</span>}
             </button>
@@ -244,7 +228,7 @@ export default function AdminShell() {
           className="admin-sidebar-footer"
           style={{
             padding: '1rem 0.75rem',
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.05)',
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem',
@@ -252,23 +236,25 @@ export default function AdminShell() {
         >
           <button
             type="button"
-            className="reset-btn"
             onClick={exportJson}
             title={sidebarCollapsed ? 'Export JSON' : ''}
             style={{
-              padding: '0.65rem',
-              borderRadius: '6px',
-              border: '1px solid rgba(255,255,255,0.12)',
-              background: 'none',
-              color: 'rgba(255,255,255,0.5)',
-              fontWeight: 700,
-              fontSize: '0.8rem',
+              padding: '0.75rem',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              background: 'transparent',
+              color: '#9ca3af',
+              fontWeight: 500,
+              fontSize: '0.85rem',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '6px',
+              gap: '8px',
+              transition: 'all 0.2s'
             }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = '#f8fafc'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#9ca3af'; }}
           >
             <i className="fa-solid fa-download" />
             {!sidebarCollapsed && <span>Export JSON</span>}
@@ -282,19 +268,22 @@ export default function AdminShell() {
             }}
             title={sidebarCollapsed ? 'Sign out' : ''}
             style={{
-              padding: '0.65rem',
-              borderRadius: '6px',
+              padding: '0.75rem',
+              borderRadius: '8px',
               border: 'none',
-              background: 'rgba(255,255,255,0.08)',
-              color: '#fff',
-              fontWeight: 700,
-              fontSize: '0.8rem',
+              background: 'rgba(239, 68, 68, 0.1)',
+              color: '#ef4444',
+              fontWeight: 500,
+              fontSize: '0.85rem',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '6px',
+              gap: '8px',
+              transition: 'background 0.2s'
             }}
+            onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(239, 68, 68, 0.15)'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'}
           >
             <i className="fa-solid fa-right-from-bracket" />
             {!sidebarCollapsed && <span>Sign out</span>}
@@ -302,8 +291,8 @@ export default function AdminShell() {
         </div>
       </aside>
 
-      {/* Main dashboard panel */}
-      <main className="admin-main" style={{ flex: 1, minWidth: 0, padding: '2rem 2.5rem' }}>
+      {/* Main Content Area */}
+      <main className="admin-main" style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0, overflowY: 'auto' }}>
         <header
           className="admin-header cms-header"
           style={{
@@ -343,14 +332,14 @@ export default function AdminShell() {
                         cursor: 'pointer',
                         padding: 0,
                         fontSize: 'inherit',
-                        fontWeight: i === getBreadcrumbs().length - 1 ? 800 : 'inherit',
+                        fontWeight: i === getBreadcrumbs().length - 1 ? 600 : 'inherit',
                         fontFamily: 'inherit',
                       }}
                     >
                       {crumb.label}
                     </button>
                   ) : (
-                    <span style={{ color: 'var(--navy)', fontWeight: 800 }}>{crumb.label}</span>
+                    <span style={{ color: 'var(--navy)', fontWeight: 600 }}>{crumb.label}</span>
                   )}
                 </span>
               ))}
@@ -373,7 +362,7 @@ export default function AdminShell() {
               >
                 <i className={`fa-solid ${sidebarCollapsed ? 'fa-indent' : 'fa-outdent'}`} />
               </button>
-              <h1 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--navy)', margin: 0 }}>
+              <h1 style={{ fontSize: '1.75rem', fontWeight: 600, color: '#1f2937', margin: 0, letterSpacing: '-0.3px' }}>
                 {MODULE_LABELS[module]}
               </h1>
             </div>
