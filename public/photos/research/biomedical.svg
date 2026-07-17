@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Background: Soft off-white -->
+  <rect width="400" height="300" rx="12" fill="#f8fafc" />
+  
+  <!-- Subtle Technical Grid -->
+  <g opacity="0.4">
+    <path d="M 0,50 L 400,50 M 0,100 L 400,100 M 0,150 L 400,150 M 0,200 L 400,200 M 0,250 L 400,250" stroke="#cbd5e1" stroke-width="0.75" />
+    <path d="M 50,0 L 50,300 M 100,0 L 100,300 M 150,0 L 150,300 M 200,0 L 200,300 M 250,0 L 250,300 M 300,0 L 300,300 M 350,0 L 350,300" stroke="#cbd5e1" stroke-width="0.75" />
+  </g>
+  
+  <!-- Interface Outer Rings -->
+  <circle cx="200" cy="140" r="90" fill="none" stroke="#fc7700" stroke-width="2" opacity="0.2" stroke-dasharray="8 5" />
+  <circle cx="200" cy="140" r="100" fill="none" stroke="#0b1f3a" stroke-width="1" opacity="0.1" />
+  
+  <!-- Crosshairs -->
+  <line x1="200" y1="20" x2="200" y2="260" stroke="#0b1f3a" stroke-width="0.75" opacity="0.15" stroke-dasharray="4 4" />
+  <line x1="80" y1="140" x2="320" y2="140" stroke="#0b1f3a" stroke-width="0.75" opacity="0.15" stroke-dasharray="4 4" />
+
+  <!-- 2D Stylized Flat Brain Shape -->
+  <!-- Left Hemisphere -->
+  <path d="M 200,80 C 170,80 145,95 145,120 C 145,130 150,135 145,145 C 140,155 142,165 152,172 C 162,179 160,190 175,190 C 185,190 188,180 200,180 Z" fill="#0b1f3a" opacity="0.75" />
+  
+  <!-- Right Hemisphere -->
+  <path d="M 200,80 C 230,80 255,95 255,120 C 255,130 250,135 255,145 C 260,155 258,165 248,172 C 238,179 240,190 225,190 C 215,190 212,180 200,180 Z" fill="#0b1f3a" opacity="0.85" />
+  
+  <!-- Cerebellum / Stem -->
+  <path d="M 185,180 C 185,200 190,215 195,225 C 200,225 205,200 205,180 Z" fill="#fc7700" opacity="0.85" />
+
+  <!-- Scanning Radar Arc -->
+  <path d="M 100,140 A 100,100 0 0,1 300,140" fill="none" stroke="#fc7700" stroke-width="3" opacity="0.7" />
+  <polygon points="300,140 295,133 305,133" fill="#fc7700" />
+  
+  <!-- Diagnostic Node Dots -->
+  <circle cx="170" cy="115" r="4" fill="#fc7700" />
+  <circle cx="170" cy="115" r="8" fill="none" stroke="#fc7700" stroke-width="1.5" opacity="0.6" />
+  
+  <circle cx="225" cy="150" r="4" fill="#f43f5e" />
+  <circle cx="225" cy="150" r="8" fill="none" stroke="#f43f5e" stroke-width="1.5" opacity="0.6" />
+  
+  <circle cx="210" cy="110" r="3" fill="#0b1f3a" opacity="0.7" />
+  
+  <!-- UI Text Elements -->
+  <text x="30" y="275" fill="#0b1f3a" font-family="monospace" font-size="12" font-weight="bold" opacity="0.6">SCAN: RAD_BreastCancer_091</text>
+  <text x="280" y="275" fill="#fc7700" font-family="monospace" font-size="12" font-weight="bold" opacity="0.85">AI-CAD ACTIVE</text>
+  
+  <!-- Target Reticle -->
+  <rect x="158" y="103" width="24" height="24" fill="none" stroke="#fc7700" stroke-width="1" opacity="0.5" />
+</svg>

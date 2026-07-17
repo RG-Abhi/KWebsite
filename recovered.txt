@@ -1,0 +1,100 @@
+import { useState } from 'react'\r
+import PageShell from './PageShell'\r
+import ScrollReveal from '../ScrollReveal'\r
+\r
+export default function ParishadPage() {\r
+  const [showRegForm, setShowRegForm] = useState(false)\r
+\r
+  const getAbsoluteUrl = (url) => {\r
+    if (!url) return ''\r
+    if (url.startsWith('http')) return encodeURI(url)\r
+    if (url.startsWith('/')) return encodeURI(`https://kmit.in${url}`)\r
+    return encodeURI(`https://kmit.in/${url}`)\r
+  }\r
+\r
+  const getViewerUrl = (url) => {\r
+    const absolute = getAbsoluteUrl(url)\r
+    if (absolute.toLowerCase().endsWith('.pdf')) {\r
+      return `https://kmit.in/pdfjs/web/viewer_with_download.html?file=${encodeURIComponent(absolute)}`\r
+    }\r
+    return absolute\r
+  }\r
+  const [formSubmitted, setFormSubmitted] = useState(false)\r
+  const [formData, setFormData] = useState({\r
+    firstname: '',\r
+    lastname: '',\r
+    gender: '',\r
+    rollnumber: '',\r
+    gradyear: '',\r
+    email: '',\r
+    mnumber: '',\r
+    department: '',\r
+    masters: '',\r
+    heuniv: '',\r
+    helocation: '',\r
+    hedegree: '',\r
+    heyear: '',\r
+    currcity: '',\r
+    currcountry: '',\r
+    currstatus: '',\r
+    wemployer: '',\r
+    wlocation: '',\r
+    wdesignation: '',\r
+    wsdate: '',\r
+    wedate: '',\r
+    stuniv: '',\r
+    stlocation: '',\r
+    stucourse: '',\r
+    stsdate: '',\r
+    stedate: '',\r
+    otheroption: '',\r
+    epcompany: '',\r
+    eplocation: '',\r
+    epdesignation: '',\r
+    epsdate: '',\r
+    epcin: '',\r
+    cpoption: '',\r
+    cpdate: '',\r
+    otcomments: ''\r
+  })\r
+\r
+  const [activeStep, setActiveStep] = useState(1)\r
+\r
+  const eve
+                          style={{\r
+                            display: 'inline-flex',\r
+                            alignItems: 'center',\r
+                            gap: '0.4rem',\r
+                            color: '#ef4444',\r
+                            textDecoration: 'none',\r
+                            fontWeight: '600',\r
+                            fontSize: '0.9rem',\r
+                            background: 'rgba(239, 68, 68, 0.08)',\r
+                            padding: '0.35rem 0.75rem',\r
+                            borderRadius: '6px',\r
+                            transition: 'background 0.2s'\r
+                          }}\r
+                          onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(239, 68, 68, 0.15)'}\r
+                          onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(239, 68, 68, 0.08)'}\r
+                        >\r
+                          <i className=\"fa-solid fa-file-pdf\"></i> View Event PDF\r
+                        </a>\r
+                      ) : (\r
+                        <span style={{ opacity: 0.5, fontSize: '0.9rem' }}>--</span>\r
+                      )}\r
+                    </td>\r
+                  </tr>\r
+                ))}\r
+              </tbody>\r
+            </table>\r
+          </div>\r
+        </div>\r
+      </section>\r
+\r
+      {/* Society info / core values */}\r
+      <section className=\"page-section-alt\">\r
+        <div className=\"container\">\r
+          <div className=\"section-header centered\">\r
+            <div className=\"section-eyebrow\">\r
+              <i className=\"fa-solid fa-gem\"></i> Core Purpose\r
+            </div>\r

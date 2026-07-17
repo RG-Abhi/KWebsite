@@ -1,0 +1,136 @@
+/* Modern Sports Page Styling */
+
+.sports-modern-table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.sports-modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sports-modern-table thead {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a365d 100%);
+  color: #ffffff;
+}
+
+.sports-modern-table th {
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.sports-modern-table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.sports-modern-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.sports-modern-table tbody tr:hover {
+  background: rgba(252, 119, 0, 0.03);
+  transform: scale(1.002);
+}
+
+.sports-modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.sports-activity-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(11, 31, 58, 0.06);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Sports Accordion Refinement */
+.sports-accordion-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  gap: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sports-accordion-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: rgba(252, 119, 0, 0.2);
+}
+
+.sports-accordion-card.active {
+  border-color: rgba(252, 119, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(252, 119, 0, 0.08);
+}
+
+.sports-acc-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(252, 119, 0, 0.1);
+  color: var(--vibrant-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.sports-acc-content {
+  flex: 1;
+}
+
+.sports-acc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+}
+
+.sports-acc-desc {
+  margin-top: 1rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

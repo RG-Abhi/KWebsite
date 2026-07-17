@@ -1,0 +1,210 @@
+.ethics-hero-block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 3rem;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,107,0,0.05) 0%, rgba(255,107,0,0.01) 100%);
+  border: 1px solid rgba(255,107,0,0.15);
+}
+
+.ethics-icon-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: rgba(255,107,0,0.12);
+  color: var(--vibrant-accent, #ff6b00);
+  flex-shrink: 0;
+}
+
+.ethics-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--vibrant-accent, #ff6b00);
+  margin-bottom: 0.75rem;
+}
+
+.ethics-hero-text h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.ethics-hero-text h2 em {
+  font-style: normal;
+  color: var(--vibrant-accent, #ff6b00);
+}
+
+.ethics-hero-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.ethics-hero-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Violations List */
+.ethics-violations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ethics-violation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border, rgba(0,0,0,0.06));
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.ethics-violation-item:hover {
+  border-color: rgba(234, 67, 53, 0.3);
+  background: rgba(234, 67, 53, 0.03);
+  transform: translateX(4px);
+}
+
+.ev-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(234, 67, 53, 0.1);
+  color: #ea4335;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ethics-violation-item p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  padding-top: 0.35rem;
+}
+
+/* Callout Block */
+.ethics-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2.5rem;
+  border-radius: 16px;
+  background: rgba(66, 133, 244, 0.05);
+  border: 1px solid rgba(66, 133, 244, 0.2);
+}
+
+.ethics-callout-icon {
+  font-size: 2.5rem;
+  color: #4285f4;
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+.ethics-callout h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.ethics-callout p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Consequences */
+.ethics-consequences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.ethics-consequence-card {
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid;
+  transition: all 0.3s ease;
+}
+
+.ethics-consequence-card.warning {
+  background: rgba(251, 188, 4, 0.05);
+  border-color: rgba(251, 188, 4, 0.25);
+}
+
+.ethics-consequence-card.danger {
+  background: rgba(234, 67, 53, 0.05);
+  border-color: rgba(234, 67, 53, 0.25);
+}
+
+.ethics-consequence-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+}
+
+.ec-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.warning .ec-icon {
+  background: rgba(251,188,4,0.15);
+  color: #fbbc04;
+}
+
+.danger .ec-icon {
+  background: rgba(234,67,53,0.15);
+  color: #ea4335;
+}
+
+.ethics-consequence-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.ethics-consequence-card p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ethics-hero-block {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .ethics-callout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

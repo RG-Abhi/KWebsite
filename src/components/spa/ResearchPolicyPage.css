@@ -1,0 +1,196 @@
+.policy-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.policy-mission-card {
+  border-radius: 16px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-mission-card.vision {
+  background: linear-gradient(135deg, rgba(var(--primary-rgb, 29,185,84), 0.12) 0%, rgba(var(--primary-rgb, 29,185,84), 0.04) 100%);
+  border: 1px solid rgba(var(--primary-rgb, 29,185,84), 0.25);
+}
+
+.policy-mission-card.mission {
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.12) 0%, rgba(255, 107, 0, 0.04) 100%);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+}
+
+.pm-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.vision .pm-icon {
+  background: rgba(var(--primary-rgb, 29,185,84), 0.15);
+  color: var(--primary, #1db954);
+}
+
+.mission .pm-icon {
+  background: rgba(255, 107, 0, 0.15);
+  color: var(--vibrant-accent, #ff6b00);
+}
+
+.policy-mission-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.policy-mission-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.policy-mission-card p strong {
+  color: var(--vibrant-accent, #ff6b00);
+  font-weight: 700;
+}
+
+/* Procedural Objectives */
+.policy-objectives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.policy-obj-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--surface, #f8f9fa);
+  border-radius: 12px;
+  border: 1px solid var(--border, rgba(0,0,0,0.06));
+  transition: all 0.3s ease;
+}
+
+.policy-obj-item:hover {
+  border-color: rgba(255, 107, 0, 0.3);
+  background: rgba(255, 107, 0, 0.03);
+  transform: translateX(4px);
+}
+
+.policy-obj-num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(255, 107, 0, 0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  min-width: 2.5rem;
+}
+
+.policy-obj-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  padding-top: 0.2rem;
+}
+
+/* Execution Strategy */
+.policy-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.policy-strategy-card {
+  padding: 2rem;
+  border-radius: 14px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border, rgba(0,0,0,0.06));
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.policy-strategy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255,107,0,0.1);
+  border-color: rgba(255, 107, 0, 0.25);
+}
+
+.ps-card-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255, 107, 0, 0.12);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.policy-strategy-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.policy-strategy-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Contacts */
+.policy-contacts {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.policy-contact-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.8rem;
+  border-radius: 50px;
+  background: var(--surface, #f8f9fa);
+  border: 1px solid var(--border, rgba(0,0,0,0.08));
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.policy-contact-pill:hover {
+  background: rgba(255, 107, 0, 0.06);
+  border-color: rgba(255, 107, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.policy-contact-pill i {
+  color: var(--vibrant-accent, #ff6b00);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .policy-mission-grid {
+    grid-template-columns: 1fr;
+  }
+  .policy-contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+}

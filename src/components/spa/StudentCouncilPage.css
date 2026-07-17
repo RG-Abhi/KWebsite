@@ -1,0 +1,74 @@
+/* Modern Student Council Styling */
+
+.council-modern-table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.council-modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 31, 58, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.council-modern-table thead {
+  background: linear-gradient(135deg, var(--navy) 0%, #1a365d 100%);
+  color: #ffffff;
+}
+
+.council-modern-table th {
+  padding: 1.25rem 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.council-modern-table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+
+.council-modern-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.council-modern-table tbody tr:hover {
+  background: rgba(252, 119, 0, 0.03);
+  transform: scale(1.002);
+}
+
+.council-modern-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.council-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(11, 31, 58, 0.06);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.council-role-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  background: rgba(252, 119, 0, 0.1);
+  color: var(--vibrant-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}

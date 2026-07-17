@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="400" height="300" rx="12" fill="#f8fafc" />
+  
+  <!-- Subtle Technical Grid -->
+  <g opacity="0.4">
+    <path d="M 0,50 L 400,50 M 0,100 L 400,100 M 0,150 L 400,150 M 0,200 L 400,200 M 0,250 L 400,250" stroke="#cbd5e1" stroke-width="0.75" />
+    <path d="M 50,0 L 50,300 M 100,0 L 100,300 M 150,0 L 150,300 M 200,0 L 200,300 M 250,0 L 250,300 M 300,0 L 300,300 M 350,0 L 350,300" stroke="#cbd5e1" stroke-width="0.75" />
+  </g>
+  
+  <!-- Airfoil / Wing profile - KMIT Navy -->
+  <path d="M 80,150 C 120,110 180,110 250,140 C 280,150 300,150 320,150 C 270,165 180,175 80,150 Z" fill="#ffffff" stroke="#0b1f3a" stroke-width="2.5" />
+  
+  <!-- Pressure gradient overlay on Wing -->
+  <path d="M 120,123 C 160,115 200,120 240,136 L 240,140 C 200,120 160,115 120,123 Z" fill="#fc7700" opacity="0.7" />
+  <path d="M 120,159 C 160,166 200,165 240,153 L 240,150 C 200,165 160,166 120,159 Z" fill="#38bdf8" opacity="0.7" />
+
+  <!-- Aerodynamic Streamlines -->
+  <!-- Streamline 1 -->
+  <path d="M 20,90 Q 120,80 180,95 T 380,110" fill="none" stroke="#fc7700" stroke-width="2.5" />
+  <polygon points="380,110 372,105 374,115" fill="#fc7700" />
+  
+  <!-- Streamline 2 -->
+  <path d="M 20,120 Q 100,100 180,120 T 380,135" fill="none" stroke="#0b1f3a" stroke-width="1.5" opacity="0.3" />
+  
+  <!-- Streamline 3 -->
+  <path d="M 20,145 C 60,145 70,130 90,130 C 130,115 180,110 250,130 C 290,140 330,140 380,150" fill="none" stroke="#f43f5e" stroke-width="3" />
+  <polygon points="380,150 372,145 374,155" fill="#f43f5e" />
+
+  <!-- Streamline 4 -->
+  <path d="M 20,175 Q 100,185 180,170 T 380,165" fill="none" stroke="#0b1f3a" stroke-width="1.5" opacity="0.3" />
+  
+  <!-- Streamline 5 -->
+  <path d="M 20,205 Q 120,220 180,205 T 380,190" fill="none" stroke="#0b1f3a" stroke-width="1.5" opacity="0.2" />
+  
+  <!-- Simulation UI Elements -->
+  <text x="30" y="40" fill="#0b1f3a" font-family="monospace" font-size="11" font-weight="bold" opacity="0.6">REYNOLDS: Re_6.5e5</text>
+  <text x="30" y="55" fill="#fc7700" font-family="monospace" font-size="11" font-weight="bold" opacity="0.8">VELOCITY: Mach 1.2</text>
+  
+  <text x="270" y="270" fill="#fc7700" font-family="monospace" font-size="12" font-weight="bold" opacity="0.95">CUDA PARALLEL</text>
+  <text x="270" y="284" fill="#0b1f3a" font-family="monospace" font-size="11" font-weight="bold" opacity="0.6">Mesh: 5.2M cells</text>
+
+  <!-- Vector indicators -->
+  <line x1="280" y1="100" x2="300" y2="80" stroke="#fc7700" stroke-width="1" />
+  <polygon points="300,80 292,80 298,86" fill="#fc7700" />
+  <text x="305" y="80" fill="#fc7700" font-family="monospace" font-size="10">V</text>
+</svg>

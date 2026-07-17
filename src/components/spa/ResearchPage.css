@@ -1,0 +1,191 @@
+.research-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .research-layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.sidebar-title, .section-subtitle {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+}
+
+.title-underline {
+  height: 4px;
+  background-color: #E5E5E5;
+  border: none;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: var(--primary);
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-links li a {
+  display: block;
+  background-color: #F7F7F7;
+  padding: 12px 15px;
+  color: var(--text-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-links li a:hover {
+  background-color: var(--primary);
+  color: white;
+  border-left: 3px solid var(--accent);
+  transform: translateX(5px);
+}
+
+.sidebar-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-images img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-images img:hover {
+  transform: translateY(-5px);
+}
+
+.research-main p {
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.outcomes-list {
+  padding-left: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.outcomes-list li {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.outcomes-list li strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.outcomes-list li p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Carousel Grid (Swiper alternative) */
+.research-carousel-grid {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 0 2rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.research-carousel-grid::-webkit-scrollbar {
+  height: 8px;
+}
+.research-carousel-grid::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+.research-carousel-grid::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.research-carousel-card {
+  min-width: 280px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-carousel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.research-carousel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.research-carousel-card-body {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.research-carousel-card-body h5 {
+  margin: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* Footer Layout */
+.research-footer-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .research-footer-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.objectives-list {
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.objectives-list li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}

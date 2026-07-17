@@ -1,0 +1,28 @@
+{
+  "short_name": "KMIT",
+  "name": "Keshav Memorial Institute of Technology",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "https://api.dicebear.com/9.x/initials/svg?seed=KMIT&backgroundColor=0f172a&textColor=ffffff",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://api.dicebear.com/9.x/initials/svg?seed=KMIT&backgroundColor=0f172a&textColor=ffffff",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0B1F3A",
+  "background_color": "#ffffff"
+}
