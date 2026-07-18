@@ -35,7 +35,7 @@ export default function HeroSlider({ onNavigate }) {
   // ── Advance to next slide ──────────────────────────────────────────
   const advance = useCallback((dir = 1) => {
     setActive(prev => (prev + dir + total) % total)
-    if (progressRef.current) progressRef.current.style.backgroundPosition = '100% 0'
+    if (progressRef.current) progressRef.current.style.setProperty('background-position', '100% 0', 'important')
     elapsedRef.current  = 0
     startTimeRef.current = null
   }, [total])
@@ -77,13 +77,13 @@ export default function HeroSlider({ onNavigate }) {
       startTimeRef.current = now
 
       const pct = Math.min((elapsedRef.current / SLIDE_DURATION) * 100, 100)
-      if (progressRef.current) progressRef.current.style.backgroundPosition = `${100 - pct}% 0`
+      if (progressRef.current) progressRef.current.style.setProperty('background-position', `${100 - pct}% 0`, 'important')
 
       if (pct >= 100) {
         elapsedRef.current  = 0
         startTimeRef.current = null
         setActive(prev => (prev + 1) % total)
-        if (progressRef.current) progressRef.current.style.backgroundPosition = '100% 0'
+        if (progressRef.current) progressRef.current.style.setProperty('background-position', '100% 0', 'important')
       }
       rafRef.current = requestAnimationFrame(tick)
     }
@@ -133,11 +133,6 @@ export default function HeroSlider({ onNavigate }) {
       onTouchEnd={onTouchEndHandler}
       aria-label="KMIT Hero Slider"
     >
-      {/* ── Slide Progress Bar ── */}
-      <div className="hero-progress-bar" aria-hidden="true">
-        <div className="hero-progress-fill" ref={progressRef} style={{ backgroundPosition: '100% 0' }} />
-      </div>
-
       {/* ── Background Image Slides ── */}
       <div className="hero-slider" aria-hidden="true">
         {SLIDES.map((slide, i) => (

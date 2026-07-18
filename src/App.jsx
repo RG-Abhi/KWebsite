@@ -268,8 +268,8 @@ function MainLayout() {
 
               <Route path="/student-life" element={<Navigate to="/student-life/co-curricular" replace />} />
               <Route path="/student-life/events" element={<Pages.AnnualEventsPage />} />
-              <Route path="/student-life/finishing-school" element={<Pages.DynamicPage pageKey="student-life/finishing-school" />} />
-              <Route path="/student-life/project-school" element={<Pages.DynamicPage pageKey="student-life/project-school" />} />
+              <Route path="/student-life/finishing-school" element={<Navigate to="/student-life/co-curricular#finishing-school" replace />} />
+              <Route path="/student-life/project-school" element={<Navigate to="/student-life/co-curricular#project-school" replace />} />
               <Route path="/student-life/achievements" element={<Pages.DynamicPage pageKey="student-life/achievements" />} />
               <Route path="/student-life/co-curricular" element={<Pages.CoCurricularsPage />} />
               <Route path="/student-life/council" element={<Pages.StudentCouncilPage />} />

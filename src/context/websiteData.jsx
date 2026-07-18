@@ -359,14 +359,14 @@ const INITIAL_DATA = {
     {
       i: 10, cls: 'grad-purple', icon: 'fa-graduation-cap',
       title: 'Finishing School', desc: 'Industry-ready skill development.',
-      section: 'student-life/finishing-school',
+      modalKey: 'FINISHING SCHOOL',
       unsplash: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
       local: '/photos/hero/Screenshot%202026-03-28%20003236.png'
     },
     {
       i: 11, cls: 'tile-tall grad-green', icon: 'fa-laptop-code',
       title: 'Project School', desc: 'Real-world engineering project experience.',
-      section: 'student-life/project-school',
+      modalKey: 'PROJECT SCHOOL',
       unsplash: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
       local: '/photos/hero/Screenshot%202026-03-28%20003333.png'
     },
@@ -1047,11 +1047,15 @@ const INITIAL_DATA = {
         {
           type: 'cards',
           items: [
-            { title: 'BEC', desc: 'Cambridge Business English Certificate coaching — free of cost.', icon: 'fa-certificate', link: 'https://kmit.in/intiatives/bec.php', linkLabel: 'Learn More' },
-            { title: 'SONET', desc: 'School of New and Emerging Technologies add-on programmes.', icon: 'fa-microchip', link: 'https://kmit.in/intiatives/sonet.php', linkLabel: 'Learn More' },
-            { title: 'Finishing School', desc: 'Career-readiness training for KMIT students.', icon: 'fa-graduation-cap', link: '/student-life/finishing-school', linkLabel: 'View Programme' },
-            { title: 'Project School', desc: 'Real-world industry projects for students.', icon: 'fa-rocket', link: '/student-life/project-school', linkLabel: 'View Programme' },
-            { title: 'Imagineering School', desc: 'Creative engineering and design thinking programme.', icon: 'fa-lightbulb', link: 'https://kmit.in/intiatives/imagineering-school.php', linkLabel: 'Learn More' },
+            { title: 'BEC', desc: 'Cambridge Business English Certificate coaching — free of cost.', icon: 'fa-certificate', modalKey: 'BEC', linkLabel: 'View Details' },
+            { title: 'SONET', desc: 'School of New and Emerging Technologies add-on programmes.', icon: 'fa-microchip', modalKey: 'SONET', linkLabel: 'View Details' },
+            { title: 'Finishing School', desc: 'Career-readiness training for KMIT students.', icon: 'fa-graduation-cap', modalKey: 'FINISHING SCHOOL', linkLabel: 'View Details' },
+            { title: 'Project School', desc: 'Real-world industry projects for students.', icon: 'fa-rocket', modalKey: 'PROJECT SCHOOL', linkLabel: 'View Details' },
+            { title: 'Imagineering School', desc: 'Creative engineering and design thinking programme.', icon: 'fa-lightbulb', modalKey: 'IMAGINEERING SCHOOL', linkLabel: 'View Details' },
+            { title: 'Trishul', desc: 'First-year foundation programme.', icon: 'fa-layer-group', modalKey: 'TRISHUL', linkLabel: 'View Details' },
+            { title: 'Arjuna', desc: 'Second-year advanced programming.', icon: 'fa-code', modalKey: 'ARJUNA', linkLabel: 'View Details' },
+            { title: 'Nirantar', desc: 'Weekly TTS high-speed coding competitions.', icon: 'fa-arrow-rotate-right', modalKey: 'NIRANTAR (NFS)', linkLabel: 'View Details' },
+            { title: 'International FS', desc: 'Global standards software engineering.', icon: 'fa-earth-americas', modalKey: 'INTERNATIONAL FINISHING SCHOOL', linkLabel: 'View Details' }
           ],
         },
       ],

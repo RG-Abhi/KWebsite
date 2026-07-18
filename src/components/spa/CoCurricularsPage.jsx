@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import PageShell from './PageShell'
 import ScrollReveal from '../ScrollReveal'
@@ -87,7 +88,7 @@ const activities = [
   }
 ]
 
-const programDetails = {
+export const programDetails = {
   'TRISHUL': {
     title: 'TRISHUL SKILL DEVELOPMENT',
     badge: 'First Year Foundation',
@@ -287,11 +288,35 @@ const programDetails = {
         ]
       }
     ]
-  }
+}
 }
 
 export default function CoCurricularsPage() {
   const [activeProgram, setActiveProgram] = useState(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '').toLowerCase()
+    const map = {
+      'bec': 'BEC',
+      'sonet': 'SONET',
+      'finishing-school': 'FINISHING SCHOOL',
+      'project-school': 'PROJECT SCHOOL',
+      'imagineering-school': 'IMAGINEERING SCHOOL',
+      'trishul': 'TRISHUL',
+      'arjuna': 'ARJUNA',
+      'nirantar': 'NIRANTAR (NFS)',
+      'ifs': 'INTERNATIONAL FINISHING SCHOOL'
+    }
+    if (map[hash]) {
+      setActiveProgram(map[hash])
+    }
+  }, [location.hash])
+
+  const handleClose = () => {
+    setActiveProgram(null)
+    window.history.replaceState(null, '', location.pathname)
+  }
 
   const selectedDetails = activeProgram ? programDetails[activeProgram] : null
 
@@ -365,7 +390,13 @@ export default function CoCurricularsPage() {
               <ScrollReveal key={i} animation="fade-up" delay={i * 50} style={{ height: '100%' }}>
               <div 
                 className="hover-lift"
-                onClick={() => setActiveProgram(act.title)}
+                onClick={() => {
+                  if (act.key) {
+                    setActiveProgram(act.key)
+                  } else {
+                    setActiveProgram(act.title)
+                  }
+                }}
                 style={{
                   background: 'var(--glass-bg, rgba(255,255,255,0.06))',
                   border: '1px solid var(--glass-border, rgba(255,255,255,0.10))',
@@ -456,7 +487,7 @@ export default function CoCurricularsPage() {
       {selectedDetails && createPortal(
         <div 
           className="premium-modal-overlay"
-          onClick={() => setActiveProgram(null)}
+          onClick={handleClose}
         >
           <div 
             className="premium-modal-card"
@@ -465,7 +496,7 @@ export default function CoCurricularsPage() {
             {/* Close Button Top Right */}
             <button 
               className="modal-close-btn"
-              onClick={() => setActiveProgram(null)}
+              onClick={handleClose}
               style={{
                 background: 'rgba(11, 31, 58, 0.05)',
                 border: '1px solid rgba(11, 31, 58, 0.08)',
@@ -569,7 +600,7 @@ export default function CoCurricularsPage() {
               <div style={{ marginTop: 'auto', width: '100%' }}>
                 <button 
                   className="modal-action-btn modal-close-navy-btn"
-                  onClick={() => setActiveProgram(null)}
+                  onClick={handleClose}
                   style={{
                     background: 'var(--navy)',
                     border: 'none',

@@ -49,7 +49,7 @@ export default function ACCPage() {
         <div className="container">
           <ScrollReveal animation="fade-up">
             <div className="acc-intro-banner" style={{
-              background: 'linear-gradient(135deg, var(--navy) 0%, #1a4080 100%)',
+              background: 'linear-gradient(135deg, #16535a 0%, #248980 100%)',
               borderRadius: '24px', padding: '3.5rem',
               display: 'grid', gridTemplateColumns: '1fr auto',
               gap: '3rem', alignItems: 'center',
@@ -91,10 +91,10 @@ export default function ACCPage() {
 
           <div style={{ marginTop: '3rem', background: 'var(--white)', borderRadius: '20px', overflow: 'hidden', boxShadow: 'var(--shadow-lift)', border: '1px solid var(--light-grey)' }}>
             {/* Table Header */}
-            <div className="acc-table-row acc-table-header" style={{ display: 'grid', gridTemplateColumns: '60px 1fr auto', gap: '0', background: 'var(--navy)', padding: '1rem 2rem', alignItems: 'center' }}>
-              <div style={{ fontSize: '0.7rem', fontWeight: '800', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px' }}>S.No</div>
-              <div style={{ fontSize: '0.7rem', fontWeight: '800', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px' }}>Name & Department</div>
-              <div style={{ fontSize: '0.7rem', fontWeight: '800', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', textAlign: 'right' }}>Designation</div>
+            <div className="acc-table-row acc-table-header" style={{ display: 'grid', gridTemplateColumns: '60px 1fr auto', gap: '0', background: '#26828B', padding: '1rem 2rem', alignItems: 'center' }}>
+              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff' }}>S.No</div>
+              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff' }}>Name & Department</div>
+              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff', textAlign: 'right' }}>Designation</div>
             </div>
 
             {/* Rows */}

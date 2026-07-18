@@ -121,7 +121,7 @@ export default function AdminShell() {
         className={`admin-sidebar cms-sidebar ${sidebarCollapsed ? 'collapsed' : ''}`}
         style={{
           width: sidebarCollapsed ? '80px' : '280px',
-          background: '#111827',
+          background: '#134e4a',
           color: '#f8fafc',
           display: 'flex',
           flexDirection: 'column',

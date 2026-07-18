@@ -1,0 +1,1209 @@
+{
+  "_id": "6a4f87e8a083c739fe0af4b2",
+  "version": "KMIT_v15_RESEARCH",
+  "navItems": [
+    {
+      "key": "administration",
+      "label": "ADMINISTRATION",
+      "type": "cards",
+      "cols": 3,
+      "items": [
+        {
+          "icon": "fa-circle-info",
+          "title": "About Us",
+          "desc": "Overview of KMIT and our history",
+          "section": "about"
+        },
+        {
+          "icon": "fa-landmark",
+          "title": "KMES",
+          "desc": "Keshav Memorial Education Society",
+          "section": "about/kmes"
+        },
+        {
+          "icon": "fa-user-tie",
+          "title": "Governing Body",
+          "desc": "Our Board of Management",
+          "section": "about/management"
+        },
+        {
+          "icon": "fa-user-graduate",
+          "title": "Principal",
+          "desc": "Leadership and Vision",
+          "section": "about/principal"
+        },
+        {
+          "icon": "fa-user-gear",
+          "title": "Director",
+          "desc": "Academic leadership",
+          "section": "about/director-academic"
+        },
+        {
+          "icon": "fa-users-gear",
+          "title": "Heads of the Department",
+          "desc": "Departmental leadership",
+          "section": "administration/hod"
+        },
+        {
+          "icon": "fa-scale-balanced",
+          "title": "Academic Core Committee",
+          "desc": "Academic governance",
+          "section": "administration/academic-core-committee"
+        },
+        {
+          "icon": "fa-handshake",
+          "title": "Industry Interaction Cell (IIC)",
+          "desc": "Industry partnerships",
+          "section": "administration/iic"
+        },
+        {
+          "icon": "fa-list-check",
+          "title": "Other Committees",
+          "desc": "Mandatory institutional bodies",
+          "section": "administration/committees"
+        },
+        {
+          "icon": "fa-id-card",
+          "title": "IDMC",
+          "desc": "Institutional Development & Monitoring",
+          "section": "administration/idmc"
+        },
+        {
+          "icon": "fa-map-location-dot",
+          "title": "Perspective Plan",
+          "desc": "Future goals and roadmap",
+          "section": "about/perspective-plan"
+        },
+        {
+          "icon": "fa-people-group",
+          "title": "HR Policy",
+          "desc": "Institutional guidelines",
+          "section": "about/hr-policy"
+        }
+      ]
+    },
+    {
+      "key": "admissions",
+      "label": "ADMISSIONS",
+      "type": "cards",
+      "cols": 1,
+      "items": [
+        {
+          "icon": "fa-laptop-code",
+          "title": "Courses Offered",
+          "desc": "B.Tech programmes available",
+          "section": "admissions"
+        },
+        {
+          "icon": "fa-file-signature",
+          "title": "Admission Procedure",
+          "desc": "How to apply",
+          "section": "admissions/eligibility"
+        },
+        {
+          "icon": "fa-ranking-star",
+          "title": "EAPCET Last Rank",
+          "desc": "Previous year cut-offs",
+          "section": "admissions/eapcet-ranks"
+        },
+        {
+          "icon": "fa-chart-simple",
+          "title": "ECET Last Rank",
+          "desc": "Lateral entry cut-offs",
+          "section": "admissions/ecet-ranks"
+        },
+        {
+          "icon": "fa-medal",
+          "title": "Scholarships",
+          "desc": "Financial aid programs",
+          "section": "admissions/scholarships"
+        }
+      ]
+    },
+    {
+      "key": "academics",
+      "label": "ACADEMICS",
+      "type": "cards",
+      "cols": 2,
+      "items": [
+        {
+          "icon": "fa-book-bookmark",
+          "title": "Regulations",
+          "desc": "Academic rules and norms",
+          "section": "academics/regulations"
+        },
+        {
+          "icon": "fa-calendar-days",
+          "title": "Academic Calendars",
+          "desc": "Schedules and timelines",
+          "section": "academics/calendar"
+        },
+        {
+          "icon": "fa-book-open",
+          "title": "Syllabus",
+          "desc": "Course curriculum",
+          "section": "academics/syllabus"
+        },
+        {
+          "icon": "fa-plus-circle",
+          "title": "Value-added Services",
+          "desc": "Beyond curriculum learning",
+          "section": "academics/value-added"
+        },
+        {
+          "icon": "fa-trophy",
+          "title": "Endowment Awards",
+          "desc": "Recognition of excellence",
+          "section": "academics/awards"
+        },
+        {
+          "icon": "fa-chalkboard-user",
+          "title": "Teaching Learning Evaluation",
+          "desc": "Assessment and methodology",
+          "section": "academics/evaluation"
+        }
+      ]
+    },
+    {
+      "key": "departments",
+      "label": "DEPARTMENTS",
+      "type": "columns",
+      "cols": 6,
+      "columns": [
+        {
+          "title": "CSE",
+          "links": [
+            {
+              "label": "About",
+              "section": "academics/cse",
+              "icon": "fa-circle-info"
+            },
+            {
+              "label": "Faculty",
+              "section": "academics/cse/faculty",
+              "icon": "fa-chalkboard-user"
+            },
+            {
+              "label": "Achievements",
+              "section": "academics/cse/achievements",
+              "icon": "fa-trophy"
+            },
+            {
+              "label": "Academics",
+              "section": "academics/cse/academics",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "academics/cse/labs",
+              "icon": "fa-flask-vial"
+            },
+            {
+              "label": "Publications",
+              "section": "academics/cse/publications",
+              "icon": "fa-newspaper"
+            },
+            {
+              "label": "Contact",
+              "section": "academics/cse/contact",
+              "icon": "fa-envelope"
+            }
+          ]
+        },
+        {
+          "title": "IT",
+          "links": [
+            {
+              "label": "About",
+              "section": "academics/it",
+              "icon": "fa-circle-info"
+            },
+            {
+              "label": "Faculty",
+              "section": "academics/it/faculty",
+              "icon": "fa-chalkboard-user"
+            },
+            {
+              "label": "Achievements",
+              "section": "academics/it/achievements",
+              "icon": "fa-trophy"
+            },
+            {
+              "label": "Academics",
+              "section": "academics/it/academics",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "academics/it/labs",
+              "icon": "fa-flask-vial"
+            },
+            {
+              "label": "Publications",
+              "section": "academics/it/publications",
+              "icon": "fa-newspaper"
+            },
+            {
+              "label": "Contact",
+              "section": "academics/it/contact",
+              "icon": "fa-envelope"
+            }
+          ]
+        },
+        {
+          "title": "CSE (AI & ML)",
+          "links": [
+            {
+              "label": "About",
+              "section": "academics/csm",
+              "icon": "fa-circle-info"
+            },
+            {
+              "label": "Faculty",
+              "section": "academics/csm/faculty",
+              "icon": "fa-chalkboard-user"
+            },
+            {
+              "label": "Achievements",
+              "section": "academics/csm/achievements",
+              "icon": "fa-trophy"
+            },
+            {
+              "label": "Academics",
+              "section": "academics/csm/academics",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "academics/csm/labs",
+              "icon": "fa-flask-vial"
+            },
+            {
+              "label": "Publications",
+              "section": "academics/csm/publications",
+              "icon": "fa-newspaper"
+            },
+            {
+              "label": "Contact",
+              "section": "academics/csm/contact",
+              "icon": "fa-envelope"
+            }
+          ]
+        },
+        {
+          "title": "CSE (Data Science)",
+          "links": [
+            {
+              "label": "About",
+              "section": "academics/csd",
+              "icon": "fa-circle-info"
+            },
+            {
+              "label": "Faculty",
+              "section": "academics/csd/faculty",
+              "icon": "fa-chalkboard-user"
+            },
+            {
+              "label": "Achievements",
+              "section": "academics/csd/achievements",
+              "icon": "fa-trophy"
+            },
+            {
+              "label": "Academics",
+              "section": "academics/csd/academics",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "academics/csd/labs",
+              "icon": "fa-flask-vial"
+            },
+            {
+              "label": "Publications",
+              "section": "academics/csd/publications",
+              "icon": "fa-newspaper"
+            },
+            {
+              "label": "Contact",
+              "section": "academics/csd/contact",
+              "icon": "fa-envelope"
+            }
+          ]
+        },
+        {
+          "title": "H&S",
+          "links": [
+            {
+              "label": "About",
+              "section": "academics/hs",
+              "icon": "fa-circle-info"
+            },
+            {
+              "label": "Faculty",
+              "section": "academics/hs/faculty",
+              "icon": "fa-chalkboard-user"
+            },
+            {
+              "label": "Achievements",
+              "section": "academics/hs/achievements",
+              "icon": "fa-trophy"
+            },
+            {
+              "label": "Academics",
+              "section": "academics/hs/academics",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "academics/hs/labs",
+              "icon": "fa-flask-vial"
+            },
+            {
+              "label": "Publications",
+              "section": "academics/hs/publications",
+              "icon": "fa-newspaper"
+            },
+            {
+              "label": "Contact",
+              "section": "academics/hs/contact",
+              "icon": "fa-envelope"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "links": [
+            {
+              "label": "Online ELMS",
+              "section": "tools/lms",
+              "icon": "fa-book-open-reader"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "research",
+      "label": "RESEARCH",
+      "type": "columns",
+      "cols": 3,
+      "columns": [
+        {
+          "title": "Research",
+          "links": [
+            {
+              "label": "About Research",
+              "section": "research",
+              "icon": "fa-lightbulb"
+            },
+            {
+              "label": "Research Labs",
+              "section": "research/labs",
+              "icon": "fa-flask"
+            },
+            {
+              "label": "Center of Excellence",
+              "section": "research/coe",
+              "icon": "fa-microchip"
+            },
+            {
+              "label": "Sponsored Research",
+              "section": "research/sponsored",
+              "icon": "fa-hand-holding-dollar"
+            },
+            {
+              "label": "Consultancy Projects",
+              "section": "research/consultancy",
+              "icon": "fa-briefcase"
+            },
+            {
+              "label": "Khub",
+              "url": "https://rtrpexpo.vercel.app/",
+              "icon": "fa-globe"
+            }
+          ]
+        },
+        {
+          "title": "Output",
+          "links": [
+            {
+              "label": "Publications & Patents",
+              "section": "research/publications",
+              "icon": "fa-file-invoice"
+            },
+            {
+              "label": "Publication Policy",
+              "section": "research/policy",
+              "icon": "fa-gavel"
+            },
+            {
+              "label": "Publications",
+              "section": "research/publications",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Patents",
+              "section": "research/patents",
+              "icon": "fa-certificate"
+            },
+            {
+              "label": "Code of Ethics",
+              "section": "research/ethics",
+              "icon": "fa-scale-balanced"
+            }
+          ]
+        },
+        {
+          "title": "Innovation Tools",
+          "links": [
+            {
+              "label": "Tessellator",
+              "section": "tools/tessellator",
+              "icon": "fa-cube"
+            },
+            {
+              "label": "LMS",
+              "section": "tools/lms",
+              "icon": "fa-book-open-reader"
+            },
+            {
+              "label": "Teleuniv",
+              "section": "tools/teleuniv",
+              "icon": "fa-tower-broadcast"
+            },
+            {
+              "label": "KMIT TV",
+              "section": "tools/tv",
+              "icon": "fa-tv"
+            },
+            {
+              "label": "ICT",
+              "section": "tools/ict",
+              "icon": "fa-desktop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "campus",
+      "label": "INFRASTRUCTURE",
+      "type": "columns",
+      "cols": 2,
+      "columns": [
+        {
+          "title": "Infrastructure",
+          "links": [
+            {
+              "label": "Overview",
+              "section": "about/campus",
+              "icon": "fa-tree-city"
+            },
+            {
+              "label": "Library (Granthalaya)",
+              "section": "campus/library",
+              "icon": "fa-book-open"
+            },
+            {
+              "label": "Labs",
+              "section": "campus/labs",
+              "icon": "fa-microchip"
+            },
+            {
+              "label": "Sports Facilities",
+              "section": "campus/sports",
+              "icon": "fa-basketball"
+            },
+            {
+              "label": "Auditorium",
+              "section": "campus/auditorium",
+              "icon": "fa-masks-theater"
+            },
+            {
+              "label": "Classrooms",
+              "section": "campus/classrooms",
+              "icon": "fa-school"
+            },
+            {
+              "label": "Accessibility",
+              "section": "campus/accessibility",
+              "icon": "fa-wheelchair"
+            }
+          ]
+        },
+        {
+          "title": "Student Life",
+          "links": [
+            {
+              "label": "Co-curriculars",
+              "section": "student-life",
+              "icon": "fa-users"
+            },
+            {
+              "label": "Extra-curriculars",
+              "section": "student-life/extra",
+              "icon": "fa-music"
+            },
+            {
+              "label": "Student Council",
+              "section": "student-life/council",
+              "icon": "fa-user-group"
+            },
+            {
+              "label": "Clubs",
+              "section": "student-life/clubs",
+              "icon": "fa-chess"
+            },
+            {
+              "label": "Street Cause",
+              "section": "student-life/street-cause",
+              "icon": "fa-handshake-angle"
+            },
+            {
+              "label": "NSS Events",
+              "section": "student-life/nss",
+              "icon": "fa-flag"
+            },
+            {
+              "label": "Annual Events",
+              "section": "student-life/events",
+              "icon": "fa-calendar-check"
+            },
+            {
+              "label": "KMIT Parishad",
+              "section": "student-life/parishad",
+              "icon": "fa-university"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "placements-exams",
+      "label": "EXAMS & PLACEMENTS",
+      "type": "columns",
+      "cols": 2,
+      "columns": [
+        {
+          "title": "Examinations",
+          "links": [
+            {
+              "label": "Notifications & Results",
+              "section": "exams/notifications",
+              "icon": "fa-bell"
+            },
+            {
+              "label": "AEB Staff",
+              "section": "exams/staff",
+              "icon": "fa-address-book"
+            },
+            {
+              "label": "Academic Reports",
+              "section": "exams/reports",
+              "icon": "fa-file-chart-line"
+            }
+          ]
+        },
+        {
+          "title": "Placements",
+          "links": [
+            {
+              "label": "Placement Cell",
+              "section": "placements/cell",
+              "icon": "fa-building-user"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "rankings",
+      "label": "RANKINGS",
+      "type": "cards",
+      "cols": 1,
+      "items": [
+        {
+          "icon": "fa-shield-check",
+          "title": "IQAC",
+          "desc": "Internal Quality Assurance Cell",
+          "section": "about/accreditations"
+        },
+        {
+          "icon": "fa-ranking-star",
+          "title": "NIRF",
+          "desc": "National Institutional Ranking Framework",
+          "section": "rankings/nirf"
+        },
+        {
+          "icon": "fa-award",
+          "title": "ARIIA",
+          "desc": "Atal Ranking of Institutions on Innovation Achievements",
+          "section": "rankings/ariia"
+        }
+      ]
+    }
+  ],
+  "announcements": [
+    "🎓 B.Tech Admissions 2025 — Applications Now Open. Apply Early!",
+    "⚡ Genesis Finishing School Batches Commence Next Week.",
+    "🏆 KMIT Students Win First Prize at National Level Hackathon.",
+    "🔬 New AI & Data Science Research Labs Inaugurated.",
+    "📊 KMIT Ranks No.1 in SWAYAM NPTEL across India for second consecutive year.",
+    "🚀 4 KMIT Students selected for Google Summer of Code (GSoC) 2025!",
+    "🏆 Team ASHTOJ wins the Smart India Hackathon (SIH) 2025 Grand Finale."
+  ],
+  "heroSlides": [
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/SIH-Winners_2025.jpg",
+      "unsplash": "",
+      "alt": "Congratulations to Team ASHTOJ for winning SIH 2025!"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Smart-India-Hackathon-2025.jpg",
+      "unsplash": "",
+      "alt": "Smart India Hackathon 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/24-hours-hacakthon-2025.jpg",
+      "unsplash": "",
+      "alt": "24 Hours Hackathon 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Hyderabad Entrepreneurship Summit 2025.jpg",
+      "unsplash": "",
+      "alt": "Hyderabad Entrepreneurship Summit 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Navraas'25.jpg",
+      "unsplash": "",
+      "alt": "Navraas 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Independence-day-celebrations-2025.jpg",
+      "unsplash": "",
+      "alt": "INDEPENDENCE DAY CELEBRATIONS 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Gradution-Day-2025.jpg",
+      "unsplash": "",
+      "alt": "Graduation Day 2025"
+    },
+    {
+      "src": "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/prakalp 2025 project expo-min.png",
+      "unsplash": "",
+      "alt": "Prakalp 2025 Project Expo"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Placement Rate",
+      "value": 95,
+      "display": "95%+",
+      "color": "red",
+      "icon": "fa-graduation-cap",
+      "animate": true,
+      "suffix": "%+"
+    },
+    {
+      "label": "Highest Package",
+      "value": 122,
+      "display": "1.22 Cr",
+      "color": "gold",
+      "icon": "fa-indian-rupee-sign",
+      "animate": false,
+      "suffix": " Cr"
+    },
+    {
+      "label": "Top Recruiters",
+      "value": 350,
+      "display": "350+",
+      "color": "blue",
+      "icon": "fa-building",
+      "animate": true,
+      "suffix": "+"
+    },
+    {
+      "label": "Years of Legacy",
+      "value": 19,
+      "display": "19+",
+      "color": "green",
+      "icon": "fa-calendar-days",
+      "animate": false,
+      "suffix": "+"
+    }
+  ],
+  "noticeBoard": {
+    "latest": [
+      {
+        "date": "March 25, 2025",
+        "title": "B.Tech Admissions 2025: Application process guide now available on student portal."
+      },
+      {
+        "date": "March 22, 2025",
+        "title": "Quality Policy: Annual academic audit scheduled for next week."
+      },
+      {
+        "date": "March 20, 2025",
+        "title": "Expert talk on Generative AI by industry leaders this Friday."
+      },
+      {
+        "date": "March 18, 2025",
+        "title": "KMIT Wins NPTEL SWAYAM Best Institute award for the 2nd consecutive year."
+      }
+    ],
+    "exams": [
+      {
+        "date": "March 15, 2025",
+        "title": "Semester End Examination Time Table — Final Year B.Tech now released."
+      },
+      {
+        "date": "March 12, 2025",
+        "title": "Internal assessment schedule for III Year students published."
+      }
+    ],
+    "placements": [
+      {
+        "date": "March 10, 2025",
+        "title": "Record placement season: 50+ students placed in Amazon this month alone."
+      },
+      {
+        "date": "March 5, 2025",
+        "title": "Microsoft visits KMIT campus — 12 students selected with 18 LPA packages."
+      }
+    ]
+  },
+  "whyChoose": [
+    {
+      "i": 1,
+      "cls": "tile-large grad-crimson",
+      "icon": "fa-building-columns",
+      "title": "NAAC A Grade",
+      "desc": "Top national accreditation for educational excellence and quality.",
+      "section": "about/accreditations",
+      "unsplash": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80",
+      "local": "/photos/annualevents/patang_2026.jpeg"
+    },
+    {
+      "i": 2,
+      "cls": "grad-gold",
+      "icon": "fa-ranking-star",
+      "title": "NIRF Ranked",
+      "desc": "Among top institutes in India.",
+      "section": "about/accreditations",
+      "unsplash": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+      "local": "/photos/annualevents/Orientation_day_25.jpg"
+    },
+    {
+      "i": 3,
+      "cls": "grad-graphite",
+      "icon": "fa-book",
+      "title": "IQAC Quality",
+      "desc": "Continuous improvement systems.",
+      "section": "about/accreditations",
+      "unsplash": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80",
+      "local": "/photos/research/bcw.jpg"
+    },
+    {
+      "i": 4,
+      "cls": "tile-wide grad-navy",
+      "icon": "fa-award",
+      "title": "NBA Accredited",
+      "desc": "Global engineering standards in technical education.",
+      "section": "about/accreditations",
+      "unsplash": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80",
+      "local": "/photos/annualevents/patang_2025.jpg"
+    },
+    {
+      "i": 5,
+      "cls": "tile-tall grad-purple",
+      "icon": "fa-rocket",
+      "title": "UDAAN R&D",
+      "desc": "Research driven learning and innovation center.",
+      "section": "research",
+      "unsplash": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80",
+      "local": "/photos/research/AICUDA.jpeg"
+    },
+    {
+      "i": 6,
+      "cls": "grad-navy",
+      "icon": "fa-microchip",
+      "title": "COE Excellence",
+      "desc": "Advanced technologies and specialized labs.",
+      "section": "research/coe",
+      "unsplash": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+      "local": "/photos/research/Blockchain_Tech_Webinar.png"
+    },
+    {
+      "i": 7,
+      "cls": "tile-wide grad-green",
+      "icon": "fa-lightbulb",
+      "title": "Innovation Cell",
+      "desc": "Creative problem solving culture.",
+      "section": "administration/innovation-council",
+      "unsplash": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
+      "local": "/photos/annualevents/prakalp_expo.jpg"
+    },
+    {
+      "i": 8,
+      "cls": "grad-crimson",
+      "icon": "fa-handshake",
+      "title": "Industry Cell",
+      "desc": "Strong global industry connections.",
+      "section": "administration/innovation-council",
+      "unsplash": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+      "local": "/photos/annualevents/Independence_Day_25.jpg"
+    },
+    {
+      "i": 9,
+      "cls": "tile-large grad-gold",
+      "icon": "fa-briefcase",
+      "title": "90%+ Placements",
+      "desc": "Consistent career success with global tech leaders.",
+      "section": "placements",
+      "unsplash": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      "local": "/photos/hero/Screenshot%202026-03-28%20003423.png"
+    },
+    {
+      "i": 10,
+      "cls": "grad-purple",
+      "icon": "fa-graduation-cap",
+      "title": "Finishing School",
+      "desc": "Industry-ready skill development.",
+      "section": "student-life/finishing-school",
+      "unsplash": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
+      "local": "/photos/hero/Screenshot%202026-03-28%20003236.png"
+    },
+    {
+      "i": 11,
+      "cls": "tile-tall grad-green",
+      "icon": "fa-laptop-code",
+      "title": "Project School",
+      "desc": "Real-world engineering project experience.",
+      "section": "student-life/project-school",
+      "unsplash": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+      "local": "/photos/hero/Screenshot%202026-03-28%20003333.png"
+    },
+    {
+      "i": 12,
+      "cls": "tile-wide grad-graphite",
+      "icon": "fa-certificate",
+      "title": "BEC Cambridge",
+      "desc": "Global professional communication skills.",
+      "section": "academics/value-added",
+      "unsplash": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&q=80",
+      "local": "/photos/annualevents/Saanjh_25.jpg"
+    }
+  ],
+  "explore": [
+    {
+      "icon": "fa-user-graduate",
+      "title": "Admissions",
+      "desc": "Explore our highly sought-after B.Tech programmes and admission process.",
+      "section": "admissions",
+      "unsplash": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80",
+      "local": "/photos/annualevents/Orientation_day_25.jpg"
+    },
+    {
+      "icon": "fa-laptop-file",
+      "title": "Tessellator",
+      "desc": "KMIT's advanced Learning Management System empowering digital education.",
+      "section": "campus/tessellator",
+      "unsplash": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80",
+      "local": "/photos/hero/Screenshot%202026-03-28%20003333.png"
+    },
+    {
+      "icon": "fa-medal",
+      "title": "Scholarships",
+      "desc": "Financial aid and merit-based awards to support outstanding students.",
+      "section": "admissions/scholarships",
+      "unsplash": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80",
+      "local": "/photos/annualevents/Graduation_day_25.jpg"
+    },
+    {
+      "icon": "fa-users",
+      "title": "Club Activities",
+      "desc": "Technical and cultural student chapters fostering innovation and leadership.",
+      "section": "student-life",
+      "unsplash": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80",
+      "local": "/photos/annualevents/Dandiya_night_25.jpg"
+    },
+    {
+      "icon": "fa-book-open-reader",
+      "title": "Academic Enhancement",
+      "desc": "Specialized tutoring, finishing schools, and extra academic support.",
+      "section": "academics",
+      "unsplash": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80",
+      "local": "/photos/hero/Screenshot%202026-03-28%20003236.png"
+    },
+    {
+      "icon": "fa-clipboard-check",
+      "title": "IQAC",
+      "desc": "Internal Quality Assurance Cell ensuring continuous academic excellence.",
+      "section": "about/accreditations",
+      "unsplash": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
+      "local": "/photos/research/bcw.jpg"
+    }
+  ],
+  "departments": [
+    {
+      "badge": "CSE",
+      "title": "Computer Science & Engineering",
+      "img": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+      "section": "academics/cse",
+      "desc": "Focused on coding excellence and core software engineering principles with an emphasis on industry readiness."
+    },
+    {
+      "badge": "CSE AI&ML",
+      "title": "CSE — Artificial Intelligence & ML",
+      "img": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&q=80",
+      "section": "academics/csm",
+      "desc": "Mastering the future of intelligence through deep learning, neural networks and data science."
+    },
+    {
+      "badge": "CSE DS",
+      "title": "CSE — Data Science",
+      "img": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80",
+      "section": "academics/csd",
+      "desc": "Driving insights from massive datasets and transforming information into technological innovation."
+    },
+    {
+      "badge": "IT",
+      "title": "Information Technology",
+      "img": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+      "section": "academics/it",
+      "desc": "Managing information systems and the full software lifecycle from architecture to deployment."
+    }
+  ],
+  "recruiters": {
+    "fwd": [
+      "google.com",
+      "microsoft.com",
+      "amazon.com",
+      "adobe.com",
+      "salesforce.com",
+      "intuit.com",
+      "cisco.com",
+      "goldmansachs.com",
+      "infosys.com",
+      "wipro.com",
+      "tcs.com",
+      "cognizant.com",
+      "accenture.com",
+      "deloitte.com",
+      "capgemini.com",
+      "techmahindra.com"
+    ],
+    "rev": [
+      "virtusa.com",
+      "zensar.com",
+      "ibm.com",
+      "oracle.com",
+      "sap.com",
+      "epam.com",
+      "hexaware.com",
+      "mphasis.com",
+      "ltimindtree.com",
+      "persistent.com",
+      "mindtree.com",
+      "paypal.com",
+      "qualcomm.com",
+      "nokia.com",
+      "samsung.com",
+      "publicissapient.com"
+    ],
+    "names": {
+      "google.com": "Google",
+      "microsoft.com": "Microsoft",
+      "amazon.com": "Amazon",
+      "adobe.com": "Adobe",
+      "salesforce.com": "Salesforce",
+      "intuit.com": "Intuit",
+      "cisco.com": "Cisco",
+      "goldmansachs.com": "Goldman Sachs",
+      "infosys.com": "Infosys",
+      "wipro.com": "Wipro",
+      "tcs.com": "TCS",
+      "cognizant.com": "Cognizant",
+      "accenture.com": "Accenture",
+      "deloitte.com": "Deloitte",
+      "capgemini.com": "Capgemini",
+      "techmahindra.com": "Tech Mahindra",
+      "virtusa.com": "Virtusa",
+      "zensar.com": "Zensar",
+      "ibm.com": "IBM",
+      "oracle.com": "Oracle",
+      "sap.com": "SAP",
+      "epam.com": "EPAM",
+      "hexaware.com": "Hexaware",
+      "mphasis.com": "Mphasis",
+      "ltimindtree.com": "LTIMindtree",
+      "persistent.com": "Persistent",
+      "mindtree.com": "Mindtree",
+      "paypal.com": "PayPal",
+      "qualcomm.com": "Qualcomm",
+      "nokia.com": "Nokia",
+      "samsung.com": "Samsung",
+      "publicissapient.com": "Publicis Sapient"
+    }
+  },
+  "siteMeta": {
+    "name": "KMIT",
+    "fullName": "Keshav Memorial Institute of Technology",
+    "location": "3-5-1026, Narayanaguda, Hyderabad — 500 029",
+    "phone": "040-23261407",
+    "email": "info@kmit.in",
+    "stats": {
+      "highestPkg": "54 LPA",
+      "internationalPkg": "₹1.2 Cr",
+      "placementRate": "90%+",
+      "recruiters": "300+"
+    }
+  },
+  "archives": {
+    "2022": {
+      "year": "2021–22",
+      "highest": "35 LPA",
+      "avg": "6.5 LPA",
+      "placed": "82%",
+      "companies": 70,
+      "drives": [
+        {
+          "company": "IBM",
+          "students": "10",
+          "pkg": "35 LPA"
+        },
+        {
+          "company": "Tech Mahindra",
+          "students": "18",
+          "pkg": "6 LPA"
+        }
+      ]
+    },
+    "2023": {
+      "year": "2022–23",
+      "highest": "40 LPA",
+      "avg": "7 LPA",
+      "placed": "85%",
+      "companies": 78,
+      "drives": [
+        {
+          "company": "Cisco",
+          "students": "05",
+          "pkg": "40 LPA"
+        },
+        {
+          "company": "Accenture",
+          "students": "30",
+          "pkg": "7 LPA"
+        },
+        {
+          "company": "Capgemini",
+          "students": "25",
+          "pkg": "5 LPA"
+        }
+      ]
+    },
+    "2024": {
+      "year": "2023–24",
+      "highest": "48 LPA",
+      "avg": "7.8 LPA",
+      "placed": "88%",
+      "companies": 85,
+      "drives": [
+        {
+          "company": "Amazon WOW",
+          "students": "12",
+          "pkg": "48 LPA"
+        },
+        {
+          "company": "Microsoft",
+          "students": "06",
+          "pkg": "40 LPA"
+        },
+        {
+          "company": "Deloitte",
+          "students": "20",
+          "pkg": "8 LPA"
+        },
+        {
+          "company": "Wipro",
+          "students": "45",
+          "pkg": "4.5 LPA"
+        },
+        {
+          "company": "TCS",
+          "students": "58",
+          "pkg": "3.5 LPA"
+        }
+      ]
+    },
+    "2025": {
+      "year": "2024–25",
+      "highest": "54 LPA",
+      "avg": "8.2 LPA",
+      "placed": "92%",
+      "companies": 92,
+      "drives": [
+        {
+          "company": "Microsoft",
+          "students": "08",
+          "pkg": "54 LPA"
+        },
+        {
+          "company": "Adobe Systems",
+          "students": "02",
+          "pkg": "44 LPA"
+        },
+        {
+          "company": "Google India",
+          "students": "04",
+          "pkg": "32 LPA"
+        },
+        {
+          "company": "Amazon",
+          "students": "15",
+          "pkg": "20 LPA"
+        },
+        {
+          "company": "Salesforce",
+          "students": "06",
+          "pkg": "18 LPA"
+        },
+        {
+          "company": "Cognizant",
+          "students": "40",
+          "pkg": "5 LPA"
+        },
+        {
+          "company": "Infosys",
+          "students": "55",
+          "pkg": "4 LPA"
+        },
+        {
+          "company": "TCS",
+          "students": "62",
+          "pkg": "3.5 LPA"
+        }
+      ]
+    }
+  },
+  "homeContent": {
+    "welcome": {
+      "eyebrow": "Our Heritage",
+      "title": "Welcome to Keshav Memorial <em>Institute of Technology</em>",
+      "text": "Keshav Memorial Institute of Technology (KMIT), established in 2007, is one of the premier engineering colleges in Telangana. KMIT is sponsored by Keshav Memorial Education Society (KMES) — well known in Hyderabad for over 70 years of educational excellence.\n\nKMIT is co-promoted and powered by Genesis Solutions Pvt. Ltd., a premier institute imparting industry-focused software training in emerging technologies."
+    },
+    "whyChoose": {
+      "eyebrow": "Academic Excellence",
+      "title": "WHY CHOOSE KMIT",
+      "text": "A legacy of innovation, industry-focused learning, and unmatched placement success tailored for the next generation of engineers."
+    },
+    "recruiters": {
+      "title": "Our Top Recruiters",
+      "text": "KMIT students are consistently recruited by global technology leaders and Fortune 500 companies."
+    }
+  },
+  "createdAt": "2026-07-09T11:37:12.609Z",
+  "updatedAt": "2026-07-09T11:37:12.609Z",
+  "__v": 0
+}
