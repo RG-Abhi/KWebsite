@@ -89,62 +89,43 @@ export default function ACCPage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ marginTop: '3rem', background: 'var(--white)', borderRadius: '20px', overflow: 'hidden', boxShadow: 'var(--shadow-lift)', border: '1px solid var(--light-grey)' }}>
-            {/* Table Header */}
-            <div className="acc-table-row acc-table-header" style={{ display: 'grid', gridTemplateColumns: '60px 1fr auto', gap: '0', background: '#26828B', padding: '1rem 2rem', alignItems: 'center' }}>
-              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff' }}>S.No</div>
-              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff' }}>Name & Department</div>
-              <div style={{ fontSize: '0.9rem', fontWeight: '500', color: '#fff', textAlign: 'right' }}>Designation</div>
-            </div>
-
-            {/* Rows */}
-            {members.map((m, i) => {
-              const badge = roleBadge[m.role]
-              return (
-                <div key={i} className="acc-table-row" style={{
-                  display: 'grid', gridTemplateColumns: '60px 1fr auto',
-                  gap: '0', padding: '1.3rem 2rem', alignItems: 'center',
-                  borderBottom: i < members.length - 1 ? '1px solid var(--light-grey)' : 'none',
-                  background: m.role === 'Chairperson' ? 'rgba(165,28,48,0.03)' : m.role === 'Convenor' ? 'rgba(255,107,0,0.03)' : 'transparent',
-                  transition: 'background 0.2s'
-                }}
-                  onMouseEnter={e => e.currentTarget.style.background = 'var(--off-white)'}
-                  onMouseLeave={e => e.currentTarget.style.background = m.role === 'Chairperson' ? 'rgba(165,28,48,0.03)' : m.role === 'Convenor' ? 'rgba(255,107,0,0.03)' : 'transparent'}
-                >
-                  {/* SNo */}
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '700' }}>{String(m.sno).padStart(2, '0')}</div>
-
-                  {/* Name + dept */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <div style={{
-                      width: '44px', height: '44px', borderRadius: '50%',
-                      background: `linear-gradient(135deg, var(--navy), #1a4080)`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      overflow: 'hidden', flexShrink: 0
-                    }}>
-                      <Avatar name={m.name} photo={m.photo} />
-                    </div>
-                    <div>
-                      <div style={{ fontWeight: '800', fontSize: '0.95rem', color: 'var(--navy)' }}>{m.name}</div>
-                      <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '2px', fontWeight: '600' }}>{m.dept}</div>
-                    </div>
-                  </div>
-
-                  {/* Role badge */}
-                  <div>
-                    <span style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '6px',
-                      background: badge.bg, color: badge.color,
-                      padding: '5px 14px', borderRadius: '20px',
-                      fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px'
-                    }}>
-                      <i className={`fa-solid ${badge.icon}`} style={{ fontSize: '0.6rem' }} />
-                      {m.role}
-                    </span>
-                  </div>
-                </div>
-              )
-            })}
+          <div className="data-table-container shadow-premium" style={{ marginTop: '2.5rem' }}>
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th style={{ width: '10%' }}>S.NO</th>
+                  <th style={{ width: '40%' }}>NAME OF THE MEMBER</th>
+                  <th style={{ width: '25%' }}>DEPARTMENT</th>
+                  <th style={{ width: '25%' }}>DESIGNATION</th>
+                </tr>
+              </thead>
+              <tbody>
+                {members.map((m, i) => (
+                  <tr key={i}>
+                    <td>{m.sno}</td>
+                    <td>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <div style={{
+                          width: '36px', height: '36px', borderRadius: '50%',
+                          background: `linear-gradient(135deg, var(--navy), #1a4080)`,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          overflow: 'hidden', flexShrink: 0
+                        }}>
+                          <Avatar name={m.name} photo={m.photo} />
+                        </div>
+                        <span className="bold text-navy">{m.name}</span>
+                      </div>
+                    </td>
+                    <td>{m.dept}</td>
+                    <td>
+                      <span className={`status-badge ${m.role === 'Chairperson' ? 'bg-navy' : m.role === 'Convenor' ? 'bg-crimson' : ''}`}>
+                        {m.role}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

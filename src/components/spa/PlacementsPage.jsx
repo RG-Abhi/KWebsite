@@ -563,17 +563,22 @@ export default function PlacementsPage() {
                 display: 'flex',
                 gap: '0.4rem',
                 marginBottom: '2rem',
-                flexWrap: 'wrap',
+                flexWrap: 'nowrap',
+                overflowX: 'auto',
                 background: '#f8fafc',
                 padding: '6px',
                 borderRadius: '4px',
-                border: '1px solid #f1f5f9'
-              }}>
+                border: '1px solid #f1f5f9',
+                WebkitOverflowScrolling: 'touch',
+                scrollbarWidth: 'none', /* Firefox */
+                msOverflowStyle: 'none' /* IE/Edge */
+              }} className="hide-scrollbar">
                 {years.map(year => (
                   <button
                     key={year}
                     onClick={() => handleYearChange(year)}
                     style={{
+                      flexShrink: 0,
                       padding: '0.5rem 1.1rem',
                       background: activeYear === year ? 'var(--navy)' : 'transparent',
                       color: activeYear === year ? '#ffffff' : '#475569',

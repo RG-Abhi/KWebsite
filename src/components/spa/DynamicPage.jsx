@@ -116,22 +116,6 @@ function renderTableCell(cell, onPdfClick) {
             {cell.text} <i className="fa-solid fa-eye" style={{ marginLeft: '4px', fontSize: '0.85em' }}></i>
           </button>
           
-          <a
-            href={getAbsoluteUrl(cell.link)}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: 'var(--navy)',
-              fontSize: '0.85em',
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center'
-            }}
-            title="Download PDF"
-          >
-            <i className="fa-solid fa-download"></i>
-          </a>
         </div>
       )
     }
@@ -894,7 +878,7 @@ export default function DynamicPage({ pageKey: propKey }) {
                     <div className="section-divider"></div>
                   </div>
                   <div className="data-table-container">
-                    <table className="data-table">
+                    <table className={`data-table ${(section.headers?.length || 0) <= 2 ? 'table-wrap-text' : ''}`}>
                       <thead>
                         <tr>
                           {section.headers.map((h, i) => <th key={i}>{h}</th>)}
@@ -952,7 +936,7 @@ export default function DynamicPage({ pageKey: propKey }) {
                       })}
                     </div>
                     <div className="data-table-container">
-                      <table className="data-table">
+                      <table className={`data-table ${(section.tabs?.[activeTabs[idx] ?? 0]?.headers?.length || 0) <= 2 ? 'table-wrap-text' : ''}`}>
                         <thead>
                           <tr>
                             {section.tabs?.[activeTabs[idx] ?? 0]?.headers?.map((h, i) => <th key={i}>{h}</th>)}
@@ -1015,7 +999,7 @@ export default function DynamicPage({ pageKey: propKey }) {
                   </div>
 
                   <div className="data-table-container">
-                    <table className="data-table">
+                    <table className={`data-table ${(section.headers?.length || 0) <= 2 ? 'table-wrap-text' : ''}`}>
                       <thead>
                         <tr>
                           {section.headers.map((h, i) => <th key={i}>{h}</th>)}

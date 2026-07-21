@@ -900,7 +900,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   .header-top-row { min-height: 80px; }
   .header-bottom-row { min-height: 0; }
   .ticker-bar { top: 80px; }
-  .logo-text-stack { display: none; }
+  .logo-text-stack { display: flex; }
 
   /* Only lock background scroll - do NOT use position:fixed on body (breaks touch scroll in overlays) */
   body.mobile-menu-active {
@@ -7594,9 +7594,10 @@ html, body {
     top: 60px !important;
   }
   .site-logo img { height: 40px !important; }
-  .logo-text-stack { height: auto !important; }
-  .logo-title { font-size: 1rem !important; }
-  .logo-subtitle { font-size: 0.55rem !important; }
+  .logo-text-stack { height: auto !important; display: flex !important; }
+  .logo-title { font-size: clamp(0.95rem, 3.2vw, 1.4rem) !important; line-height: 1.15 !important; }
+  .logo-subtitle { font-size: clamp(0.45rem, 1.5vw, 0.65rem) !important; }
+  .logo-powered { font-size: clamp(0.4rem, 1.2vw, 0.55rem) !important; }
   .header-accreditations-wrap { display: none !important; }
   .header-quick-nav { display: none !important; }
   .header-pay-btn { display: none !important; }
@@ -8432,3 +8433,196 @@ table tbody tr:last-child td {
   font-style: normal !important;
 }
 
+
+
+/* Force visible horizontal scrollbars on mobile */
+.data-table-wrap::-webkit-scrollbar,
+.data-table-container::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar,
+.placements-table-scroll::-webkit-scrollbar {
+  height: 6px !important;
+  display: block !important;
+}
+.data-table-wrap::-webkit-scrollbar-track,
+.data-table-container::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-track,
+.placements-table-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.data-table-wrap::-webkit-scrollbar-thumb,
+.data-table-container::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb,
+.placements-table-scroll::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+/* Hide scrollbar for tabs */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Helper for tables with long text that SHOULD wrap */
+.table-wrap-text {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+.table-wrap-text th,
+.table-wrap-text td {
+  white-space: normal !important;
+}
+
+/* HOD Cards / Leader Cards */
+.leader-card {
+  text-align: left;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--light-grey);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.leader-avatar {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 4px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .leader-card {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .leader-avatar {
+    height: 90px;
+    width: 90px;
+  }
+  .leader-card h4 {
+    font-size: 1.2rem !important;
+  }
+  .leader-card p {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+/* HOD Grid Layout */
+.hod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.hod-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hod-dept-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  width: max-content;
+}
+.leader-card h4 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.leader-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.hod-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-grey);
+}
+@media (max-width: 768px) {
+  .hod-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .leader-card {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  .hod-card-info {
+    align-items: center;
+  }
+  .leader-card h4 {
+    font-size: 1rem !important;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .leader-card p {
+    font-size: 0.75rem !important;
+    text-align: center;
+    margin-bottom: 0.6rem !important;
+  }
+  .hod-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.6rem;
+  }
+  /* Center the button properly */
+  .hod-actions button:last-child {
+    margin-left: 0 !important;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Nested Submenu Mobile Toggle Fix */
+.nested-submenu-inline-panel.is-open-panel {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 1024px) {
+  /* Override sticky CSS hover on mobile */
+  .nested-submenu-card-wrap:hover .nested-submenu-inline-panel:not(.is-open-panel) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+  }
+  .nested-submenu-card-wrap:hover .nested-arrow-inline:not(.is-open-arrow) {
+    transform: none !important;
+    color: inherit !important;
+  }
+  .nested-arrow-inline.is-open-arrow {
+    transform: rotate(90deg) !important;
+    color: var(--vibrant-accent) !important;
+  }
+}
