@@ -9,7 +9,7 @@
   display: flex;
   overflow-x: auto;
   gap: 2rem;
-  padding: 1.5rem 5vw; /* Center the first/last items */
+  padding: 1.5rem 0;
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* Hide standard scrollbar */
   -ms-overflow-style: none;
@@ -22,7 +22,8 @@
 
 .coe-carousel-card {
   height: 400px;
-  width: 900px;
+  width: auto;
+  min-width: 280px;
   max-width: 90vw;
   flex-shrink: 0;
   border-radius: 8px;
@@ -48,8 +49,9 @@
 
 .coe-carousel-card img {
   height: 100%;
-  width: 100%;
-  object-fit: cover; /* Maintain natural wide panoramic aspect ratio! */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain; /* Maintain natural wide panoramic aspect ratio! */
   display: block;
 }
 
@@ -169,14 +171,3 @@
   }
 }
 
-
-@media (min-width: 1000px) {
-  .coe-carousel-grid {
-    padding: 1.5rem calc(50vw - 450px);
-  }
-}
-@media (max-width: 768px) {
-  .coe-carousel-card {
-    height: 55vw; /* Maintain panoramic aspect ratio on mobile */
-  }
-}

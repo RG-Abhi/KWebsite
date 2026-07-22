@@ -83,16 +83,43 @@ export default function HODPage() {
             />
           </div>
 
-          <div className="hod-grid">
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
+            gap: '2rem',
+            marginTop: '2.5rem' 
+          }}>
             {filtered.map((h, i) => (
               <div 
                 key={i} 
                 className="leader-card" 
+                style={{ 
+                  textAlign: 'left', 
+                  padding: '1.8rem', 
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: '2rem',
+                  borderRadius: '16px',
+                  background: '#fff',
+                  border: '1px solid var(--light-grey)',
+                  borderLeft: '5px solid ' + getDeptColor(h.dept),
+                  boxShadow: 'var(--shadow-card)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                }}
               >
-                <div 
-                  className="leader-avatar"
-                  style={{ border: '4px solid ' + getDeptColor(h.dept) }}
-                >
+                <div style={{ 
+                  height: '140px', 
+                  width: '140px', 
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  flexShrink: 0,
+                  border: '4px solid ' + getDeptColor(h.dept),
+                  padding: '4px',
+                  background: '#fff'
+                }}>
                     <img 
                       src={h.image} 
                       alt={h.name} 
@@ -103,20 +130,32 @@ export default function HODPage() {
                     />
                 </div>
 
-                <div className="hod-card-info">
-                    <div 
-                      className="hod-dept-tag"
-                      style={{ 
-                        color: getDeptColor(h.dept), 
-                        background: `${getDeptColor(h.dept)}15` 
-                      }}
-                    >
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ 
+                      fontSize: '0.7rem', 
+                      color: getDeptColor(h.dept), 
+                      fontWeight: '800', 
+                      textTransform: 'uppercase', 
+                      letterSpacing: '1px', 
+                      marginBottom: '0.4rem',
+                      background: `${getDeptColor(h.dept)}15`,
+                      padding: '4px 10px',
+                      borderRadius: '20px',
+                      display: 'inline-block',
+                      width: 'max-content'
+                    }}>
                       {h.dept.replace('CSE ', '')}
                     </div>
-                    <h4>{h.name}</h4>
-                    <p>{h.role}</p>
+                    <h4 style={{ fontSize: '1.4rem', color: 'var(--navy)', marginBottom: '0.3rem', fontWeight: '800', letterSpacing: '-0.5px' }}>{h.name}</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '600', marginBottom: '1.2rem' }}>{h.role}</p>
                     
-                    <div className="hod-actions">
+                    <div style={{ 
+                      marginTop: 'auto', 
+                      display: 'flex', 
+                      gap: '0.8rem', 
+                      paddingTop: '1rem', 
+                      borderTop: '1px solid var(--light-grey)' 
+                    }}>
                        <button style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '1rem', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color='var(--vibrant-accent)'} onMouseLeave={e => e.currentTarget.style.color='var(--text-muted)'}><i className="fa-solid fa-envelope"></i></button>
                        <button style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '1rem', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color='#0077b5'} onMouseLeave={e => e.currentTarget.style.color='var(--text-muted)'}><i className="fa-brands fa-linkedin"></i></button>
                        <button 

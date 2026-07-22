@@ -51,7 +51,6 @@ export default function Header({ scrolled, activeSection, onNavigate }) {
   const searchIndexData = useMemo(() => buildSearchIndex(NAV_ITEMS), [NAV_ITEMS])
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState(null)
-  const [nestedExpanded, setNestedExpanded] = useState(null)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const searchInputRef = useRef(null)
@@ -77,7 +76,7 @@ export default function Header({ scrolled, activeSection, onNavigate }) {
   useEffect(() => {
     document.body.classList.toggle('mobile-menu-active', mobileOpen)
     // Reset expanded dropdown when menu is closed
-    if (!mobileOpen) { setMobileExpanded(null); setNestedExpanded(null); }
+    if (!mobileOpen) setMobileExpanded(null)
   }, [mobileOpen])
 
   useEffect(() => {
@@ -213,17 +212,10 @@ export default function Header({ scrolled, activeSection, onNavigate }) {
                               if (isSyllabus) {
                                 return (
                                   <div key={i} className="nested-submenu-card-wrap">
-                                    <span 
-                                      className="mega-card nested-trigger-card"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        setNestedExpanded(prev => prev === 'Syllabus' ? null : 'Syllabus');
-                                      }}
-                                    >
-                                      {card.title} <i className={`fa-solid fa-chevron-right nested-arrow-inline${nestedExpanded === 'Syllabus' ? ' is-open-arrow' : ''}`}></i>
+                                    <span className="mega-card nested-trigger-card">
+                                      {card.title} <i className="fa-solid fa-chevron-right nested-arrow-inline"></i>
                                     </span>
-                                    <div className={`nested-submenu-inline-panel${nestedExpanded === 'Syllabus' ? ' is-open-panel' : ''}`}>
+                                    <div className="nested-submenu-inline-panel">
                                       <a href="#" onClick={e => { e.preventDefault(); handleNav('academics/cse/syllabus') }}>CSE Syllabus</a>
                                       <a href="#" onClick={e => { e.preventDefault(); handleNav('academics/it/syllabus') }}>IT Syllabus</a>
                                       <a href="#" onClick={e => { e.preventDefault(); handleNav('academics/csm/syllabus') }}>CSM Syllabus</a>
@@ -257,18 +249,10 @@ export default function Header({ scrolled, activeSection, onNavigate }) {
                                     if (isCommitteesSub) {
                                       return (
                                         <div key={li} className="nested-submenu-card-wrap">
-                                          <span 
-                                            className="nested-trigger-card" 
-                                            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'pointer', fontSize: '0.88rem', fontWeight: 500, color: '#334155' }}
-                                            onClick={(e) => {
-                                              e.preventDefault();
-                                              e.stopPropagation();
-                                              setNestedExpanded(prev => prev === 'Committees' ? null : 'Committees');
-                                            }}
-                                          >
-                                            Committees <i className={`fa-solid fa-chevron-right nested-arrow-inline${nestedExpanded === 'Committees' ? ' is-open-arrow' : ''}`}></i>
+                                          <span className="nested-trigger-card" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'pointer', fontSize: '0.88rem', fontWeight: 500, color: '#334155' }}>
+                                            Committees <i className="fa-solid fa-chevron-right nested-arrow-inline"></i>
                                           </span>
-                                          <div className={`nested-submenu-inline-panel${nestedExpanded === 'Committees' ? ' is-open-panel' : ''}`}>
+                                          <div className="nested-submenu-inline-panel">
                                             <a href="#" onClick={e => { e.preventDefault(); handleNav('administration/hod') }}>HODs</a>
                                             <a href="#" onClick={e => { e.preventDefault(); handleNav('administration/academic-core-committee') }}>Academic Core</a>
                                             <a href="#" onClick={e => { e.preventDefault(); handleNav('administration/iic') }}>IIC</a>

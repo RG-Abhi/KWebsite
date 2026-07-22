@@ -20,7 +20,7 @@ import MobileTabBar from './components/MobileTabBar'
 import StudentQuickAccess from './components/StudentQuickAccess'
 import PageLoader from './components/PageLoader'
 import StickyContextualCTA from './components/StickyContextualCTA'
-
+import SyncStatusBanner from './components/SyncStatusBanner'
 import ScrollReveal from './components/ScrollReveal'
 import { DataProvider } from './context/websiteData'
 import { verifyToken } from './services/authService'
@@ -174,7 +174,7 @@ function MainLayout() {
 
   return (
     <>
-
+      <SyncStatusBanner />
       <div className="mobile-menu-overlay" id="mobile-overlay" />
       <Header scrolled={scrolled} activeSection={activeSection} onNavigate={handleNavigate} />
       <Ticker scrolled={scrolled} />

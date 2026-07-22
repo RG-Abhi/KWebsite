@@ -393,8 +393,8 @@ export default function ResearchCoEPage() {
                 {partners.map((partner, idx) => (
                   <ScrollReveal key={idx} animation="fade-up" style={{ height: '100%' }}>
                   <div className="research-lab-card" style={{ cursor: 'pointer', height: '100%' }} onClick={() => handleCoESelect(partner.key)}>
-                    <div className="research-lab-img-wrapper" style={{ width: '100%', height: '220px', aspectRatio: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff', borderBottom: '1px solid var(--light-grey)', padding: '1.5rem', boxSizing: 'border-box' }}>
-                      <img src={partner.image} alt={partner.title} className="research-lab-img" style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
+                    <div className="research-lab-img-wrapper" style={{ height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ffffff', borderBottom: '1px solid var(--light-grey)' }}>
+                      <img src={partner.image} alt={partner.title} className="research-lab-img" style={{ objectFit: 'contain', padding: '1.5rem', width: '100%', height: '100%' }} />
                       <div className="research-lab-overlay">
                         <img src="/assets/plus.png" alt="View Details" className="research-lab-plus" />
                       </div>
