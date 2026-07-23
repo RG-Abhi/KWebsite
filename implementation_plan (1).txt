@@ -1,0 +1,113 @@
+================================================================================
+                     KMIT WEBSITE IMPLEMENTATION PLAN
+================================================================================
+
+--------------------------------------------------------------------------------
+PART 1: MAIN WEBSITE UPGRADE PLAN
+--------------------------------------------------------------------------------
+
+GOAL:
+Transform the KMIT website into an award-worthy digital experience with 
+production-grade performance, accessibility, and modern visual design.
+
+CURRENT STATE AUDIT & GAPS:
+1. Hero Section & Slider:
+   - Static text, missing conversion CTAs.
+   - Low contrast overlay competing with text.
+   - Missing slide indicators & 5s timer progress bar.
+2. Section Design & Interactivity:
+   - StatsBar lacks glassmorphism and animated glow effects.
+   - PlacementSection data hardcoded in JSX instead of CMS hook.
+   - WhyChooseSection lacks 3D depth/perspective hover effects.
+   - EventsSection needs lazy-load shimmer and dynamic captions.
+   - ChatbotWidget contains injected style tags & lacks keyword matching.
+3. Code Quality & Performance:
+   - index.css size (~191 KB) with unoptimized dead code.
+   - Lacks SEO meta tags, OpenGraph, Twitter Cards, and preconnect links.
+   - Lacks route-level ErrorBoundary & 404 page fallback.
+
+PHASED IMPLEMENTATION:
+
+Phase 1 — Foundation Fixes (Performance & Code Health)
+------------------------------------------------------
+- index.html: Add preconnect for Google Fonts/FontAwesome, SEO meta tags, OpenGraph, Twitter cards.
+- vite.config.js: Add build optimizations (es2020 target, cssCodeSplit, assetsInlineLimit, compression).
+- index.css: Clean up dead CSS, refine color palette (--lime fix), add prefers-color-scheme dark mode support.
+
+Phase 2 — Hero Section Overhaul
+--------------------------------
+- HeroSlider.jsx: Rewrite hero layout to include CTA buttons ("Explore Programs", "Virtual Campus Tour"), slide dots, 5s progress bar, dynamic glassmorphism stat pills, and smooth transitions.
+- HeroStatPills.jsx: New component for floating glassmorphic key metrics overlay.
+
+Phase 3 — Homepage Sections & Visual Upgrades
+---------------------------------------------
+- StatsBar.jsx: Add dark gradient, glassmorphism cards, micro-animations on counter completion.
+- PlacementSection.jsx: Connect to useData() hook, add infinite placement ticker (Student -> Company -> Package), add count-up animations.
+- RecruitersMarquee.jsx: Create dual-row infinite marquee (Row 1 left, Row 2 right) with color-on-hover effects.
+- WhyChooseSection.jsx: Add 3D perspective tilt on hover, stagger animations, overlay descriptions.
+- WelcomeSection.jsx: Include Principal's photo, news category badges, and sliding tab underline.
+- InfiniteAchievements.jsx: Alternating card styling, glow-on-hover, quick share micro-button.
+- TestimonialsSection.jsx & CampusVideoSection.jsx: New sections for student quotes and campus YouTube tour embed.
+
+Phase 4 — Navigation, UX & Accessibility
+-----------------------------------------
+- Header.jsx: Deduplicate search component, add prominent "Apply Now" CTA button, improve ARIA accessibility.
+- App.jsx: Add route transition animations, 404 Not Found page, and top-level ErrorBoundary.
+- ChatbotWidget.jsx: Implement keyword-matching FAQ response engine (admissions, fees, placements, etc.) with typing indicator.
+
+Phase 5 — Footer & Mobile Polish
+--------------------------------
+- Footer.jsx: Rich dark navy gradient background, top Admissions CTA strip, QR code placeholder, animated social icons, scroll-to-top button.
+
+Phase 6 — New Homepage Sections Order
+-------------------------------------
+1. HeroSlider (with stat pills + CTA buttons + slide indicators)
+2. StudentQuickAccess
+3. StatsBar
+4. WelcomeSection
+5. EventsSection
+6. WhyChooseSection
+7. DeptSection
+8. PlacementSection (with placement ticker)
+9. RecruitersMarquee
+10. InfiniteAchievements
+11. TestimonialsSection
+12. CampusVideoSection
+
+--------------------------------------------------------------------------------
+PART 2: ADMIN PANEL IMPLEMENTATION PLAN
+--------------------------------------------------------------------------------
+
+GOAL:
+Implement a robust, secure, role-based Admin Portal for dynamic management 
+of website content, notices, placements, faculty, and academic files.
+
+1. System Architecture:
+   - Database: MongoDB with Mongoose schemas (User, Department, Faculty, Notice, Page, AcademicDoc, SiteData, AuditLog).
+   - Storage: Media stored in server/uploads or S3, DB stores URL references.
+   - Authentication: JWT tokens with HTTP-only cookies / local storage.
+   - RBAC Roles: Super Admin, Department HOD, Content Editor.
+
+2. Content Management Scope:
+   - Academics & Faculty: Faculty profiles, department details, syllabi, exam schedules.
+   - Announcements: Homepage ticker, circulars, urgent alerts.
+   - Placements: Recruiter logos, placement statistics, student testimonials.
+   - Static/Dynamic Pages: Department pages, committee pages, general info.
+   - Site Configuration: Contact details, footer links, social links.
+
+3. Safeguards & Immutability:
+   - Restricted CSS/Layout changes: Design tokens, layout structure, and fonts remain locked.
+   - Audit Log: Every action logged with append-only security (no deletion permitted).
+
+--------------------------------------------------------------------------------
+VERIFICATION & TESTING PLAN
+--------------------------------------------------------------------------------
+1. Automated Verification:
+   - Run `npm run build` to verify zero build/syntax errors.
+   - Run `npm run preview` to verify bundle serving.
+   - Run Lighthouse audit targeting Performance >= 85, Accessibility >= 95, SEO = 100.
+2. Manual Verification Checklist:
+   - Verify Hero CTA buttons and keyboard navigation.
+   - Verify FAQ Chatbot responses for key terms.
+   - Test placement ticker scroll and counter animations.
+   - Test responsive layout on desktop, tablet, and mobile.

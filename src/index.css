@@ -408,7 +408,7 @@ img { max-width: 100%; display: block; }
   min-height: auto;
   padding-top: 0;
 }
-.site-logo { display: flex; align-items: center; gap: 2px; flex-shrink: 0; margin: 0; padding-top: 3px; }
+.site-logo { display: flex; align-items: center; gap: 2px; flex-shrink: 1; margin: 0; padding-top: 3px; min-width: 0; }
 .site-logo img { height: 60px !important; width: auto; display: block; }
 .logo-text-stack {
   display: flex;
@@ -898,9 +898,9 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   .header-inner { padding: 0 1rem; }
   .header-inner { min-height: 80px; }
   .header-top-row { min-height: 80px; }
-  .header-bottom-row { min-height: 0; }
+  .header-bottom-row { min-height: 0; height: 0; overflow: hidden; padding: 0; border: none; }
   .ticker-bar { top: 80px; }
-  .logo-text-stack { display: none; }
+  .logo-text-stack { display: flex; }
 
   /* Only lock background scroll - do NOT use position:fixed on body (breaks touch scroll in overlays) */
   body.mobile-menu-active {
@@ -1432,7 +1432,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   }
   .hero-content-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .hero-left { text-align: center; align-items: center; margin: 0 auto; }
-  .hero-left h1 { font-size: 3.2rem; }
+  .hero-left h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
   .hero-left p { margin-left: auto; margin-right: auto; }
   .hero-btns { justify-content: center; }
   .hero-stat-pills { justify-content: center; }
@@ -1561,7 +1561,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 
 /* ===== WELCOME ===== */
 .welcome-section { 
-  padding: 5rem 0; 
+  padding: clamp(2.5rem, 6vw, 5rem) 0; 
   background: var(--white); 
   position: relative;
   overflow: hidden;
@@ -1854,7 +1854,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 }
 .trending-title {
   font-family: var(--font-sans);
-  font-size: 3.8rem;
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.05;
@@ -2010,7 +2010,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   .tr-deco { display: none; }
 }
 @media (max-width: 640px) {
-  .trending-section { padding: 4rem 0; }
+  .trending-section { padding: clamp(2rem, 5vw, 4rem) 0; }
   .trending-grid { grid-template-columns: 1fr; }
   .tr-col-right { display: flex; }
   .trending-title { font-size: 2.4rem; }
@@ -2495,7 +2495,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   overflow: hidden; 
   border-top: 1px solid rgba(11, 31, 58, 0.05);
   background: linear-gradient(180deg, rgba(248, 250, 252, 0.8) 0%, rgba(255, 255, 255, 1) 100%);
-  padding: 5rem 0 3rem;
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(1.5rem, 4vw, 3rem);
 }
 .marquee-container { 
   overflow: hidden; 
@@ -3103,7 +3103,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 @keyframes spaFadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .page-transition-wrap { animation: pageSlideIn 0.28s cubic-bezier(0.25,0.8,0.25,1) both; }
 @keyframes pageSlideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.spa-overview { padding: 5rem 0 4rem; background: var(--white); }
+.spa-overview { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2rem, 5vw, 4rem); background: var(--white); }
 .spa-overview-inner { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
 .spa-hero-banner { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 3rem; }
 .spa-hero-banner h1 { font-family: var(--font-serif); font-size: clamp(2.2rem,4.5vw,3.5rem); color: var(--navy); font-weight: 800; line-height: 1.15; }
@@ -3470,35 +3470,35 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 /* Page wrapper */
 .sub-page { 
   min-height: 100vh; 
-  padding-top: 92px; 
+  padding-top: 132px; 
   background: #f4f6f9; /* Match home page base grey */
   position: relative;
   z-index: 1;
 }
 
 @media (max-width: 1024px) {
-  .sub-page { padding-top: 80px; }
+  .sub-page { padding-top: 120px; }
 }
 
 @media (max-width: 640px) {
-  .sub-page { padding-top: 60px; }
+  .sub-page { padding-top: 92px; }
 }
 
 /* ─── Page Section Utilities (used across all SPA pages) ─── */
 .page-section {
-  padding: 5rem 0;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
   background: var(--white);
   position: relative;
 }
 
 .page-section-alt {
-  padding: 5rem 0;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
   background: #f4f6f9;
   position: relative;
 }
 
 .page-section-dark {
-  padding: 5rem 0;
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
   background: var(--navy);
   position: relative;
   color: #fff;
@@ -3528,7 +3528,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   .page-section,
   .page-section-alt,
   .page-section-dark {
-    padding: 4rem 0;
+    padding: clamp(2rem, 5vw, 4rem) 0;
   }
 }
 
@@ -3543,7 +3543,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 /* Page Hero Banner — Premium Institutional Dark */
 .page-hero { 
   background: linear-gradient(135deg, #0d1117 0%, #1c2333 50%, #0f1724 100%); 
-  padding: 7rem 0 5.5rem; 
+  padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(2.5rem, 6vw, 5.5rem); 
   position: relative; 
   overflow: hidden; 
   border-bottom: 3px solid var(--crimson);
@@ -4282,7 +4282,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 }
 
 .quote-block {
-  padding: 4rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
   background: var(--white);
   border-left: 6px solid var(--crimson);
   position: relative;
@@ -4294,7 +4294,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   position: absolute;
   top: 3rem;
   right: 4rem;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   opacity: 0.04;
   color: var(--navy);
   pointer-events: none;
@@ -4321,7 +4321,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
 
 .cta-banner {
   background: var(--navy);
-  padding: 4rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -4479,7 +4479,7 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
   .accred-badge { padding: 1rem; min-width: 0; }
   .logo-wordmark { display: none; } /* Hide wordmark on small mobile to save header space */
   .ticker-bar { top: 60px; height: 32px; visibility: visible; width: 100% !important; left: 0; }
-  .hero { padding-top: 92px; height: auto !important; min-height: none !important; padding-bottom: 3rem; }
+  .hero { padding-top: 132px; height: auto !important; min-height: none !important; padding-bottom: 3rem; }
   .hero-content-grid { grid-template-columns: 1fr !important; gap: 2rem; width: 100% !important; margin: 0 !important; }
 }
 
@@ -5740,7 +5740,7 @@ header.scrolled {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.quick-access-section { padding: 4rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border-bottom: none; }
+.quick-access-section { padding: clamp(2rem, 5vw, 4rem) 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); border-bottom: none; }
 .quick-access-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -6274,7 +6274,7 @@ header.scrolled {
 }
 
 .detail-panel-icon {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   color: #0f172a;
 }
 
@@ -7028,7 +7028,7 @@ button.add-btn:hover,
    INFINITE SCROLL ACHIEVEMENTS SECTION
    ==================================================== */
 .infinite-achievements-sec {
-  padding: 5rem 0 6rem;
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem);
   background: var(--off-white);
   position: relative;
   overflow: hidden;
@@ -7564,7 +7564,7 @@ button.add-btn:hover,
 /* ── 1. BASE: Prevent horizontal overflow on the whole page ── */
 html, body {
   overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100%;
 }
 * { box-sizing: border-box; }
 
@@ -7593,14 +7593,15 @@ html, body {
   .search-dropdown {
     top: 60px !important;
   }
-  .site-logo img { height: 40px !important; }
-  .logo-text-stack { height: auto !important; }
-  .logo-title { font-size: 1rem !important; }
-  .logo-subtitle { font-size: 0.55rem !important; }
+  .site-logo img { height: 35px !important; }
+  .logo-text-stack { height: auto !important; display: flex !important; min-width: 0 !important; }
+  .logo-title { font-size: clamp(0.75rem, 2.8vw, 1.1rem) !important; line-height: 1.15 !important; white-space: normal !important; }
+  .logo-subtitle { font-size: clamp(0.4rem, 1.3vw, 0.55rem) !important; white-space: normal !important; }
+  .logo-powered { font-size: clamp(0.35rem, 1vw, 0.45rem) !important; }
   .header-accreditations-wrap { display: none !important; }
   .header-quick-nav { display: none !important; }
   .header-pay-btn { display: none !important; }
-  .mobile-header-actions { gap: 0.5rem !important; }
+  .mobile-header-actions { gap: 0.5rem !important; flex-shrink: 0 !important; }
 }
 
 /* ── 3. TICKER — phone ── */
@@ -7729,7 +7730,7 @@ html, body {
 /* ── 7. SPA PAGE HERO (sub-pages) ── */
 @media (max-width: 640px) {
   .page-hero {
-    padding: 5rem 0 2rem !important;
+    padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(1rem, 4vw, 2rem) !important;
   }
   .page-hero h1 {
     font-size: clamp(1.4rem, 6vw, 2rem) !important;
@@ -8258,7 +8259,6 @@ html, body {
   flex-direction: column !important;
   gap: 0 !important;
 }
-.dept-sidebar { display: none !important; }
 
 /* Mobile: make the strip slightly smaller */
 @media (max-width: 640px) {
@@ -8432,3 +8432,249 @@ table tbody tr:last-child td {
   font-style: normal !important;
 }
 
+
+
+/* Force visible horizontal scrollbars on mobile */
+.data-table-wrap::-webkit-scrollbar,
+.data-table-container::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar,
+.placements-table-scroll::-webkit-scrollbar {
+  height: 6px !important;
+  display: block !important;
+}
+.data-table-wrap::-webkit-scrollbar-track,
+.data-table-container::-webkit-scrollbar-track,
+.table-responsive::-webkit-scrollbar-track,
+.placements-table-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.data-table-wrap::-webkit-scrollbar-thumb,
+.data-table-container::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb,
+.placements-table-scroll::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+/* Hide scrollbar for tabs */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Helper for tables with long text that SHOULD wrap */
+.table-wrap-text {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+.table-wrap-text th,
+.table-wrap-text td {
+  white-space: normal !important;
+}
+
+/* HOD Cards / Leader Cards */
+.leader-card {
+  text-align: left;
+  padding: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid var(--light-grey);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.leader-avatar {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 4px;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .leader-card {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .leader-avatar {
+    height: 90px;
+    width: 90px;
+  }
+  .leader-card h4 {
+    font-size: 1.2rem !important;
+  }
+  .leader-card p {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+/* HOD Grid Layout */
+.hod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.hod-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hod-dept-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  width: max-content;
+}
+.leader-card h4 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.leader-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.hod-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-grey);
+}
+@media (max-width: 768px) {
+  .hod-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+  .leader-card {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  .hod-card-info {
+    align-items: center;
+  }
+  .leader-card h4 {
+    font-size: 1rem !important;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .leader-card p {
+    font-size: 0.75rem !important;
+    text-align: center;
+    margin-bottom: 0.6rem !important;
+  }
+  .hod-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.6rem;
+  }
+  /* Center the button properly */
+  .hod-actions button:last-child {
+    margin-left: 0 !important;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Nested Submenu Mobile Toggle Fix */
+.nested-submenu-inline-panel.is-open-panel {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 1024px) {
+  /* Override sticky CSS hover on mobile */
+  .nested-submenu-card-wrap:hover .nested-submenu-inline-panel:not(.is-open-panel) {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+  }
+  .nested-submenu-card-wrap:hover .nested-arrow-inline:not(.is-open-arrow) {
+    transform: none !important;
+    color: inherit !important;
+  }
+  .nested-arrow-inline.is-open-arrow {
+    transform: rotate(90deg) !important;
+    color: var(--vibrant-accent) !important;
+  }
+}
+
+/* -- Priority 11: Mobile Adaptability Fixes -- */
+@media (max-width: 480px) {
+  .dept-grid, 
+  .spa-cards-grid, 
+  .stats-strip, 
+  .explore-grid, 
+  .archive-grid, 
+  .badge-strip, 
+  .recruiters-logo-grid,
+  .placement-highlights,
+  .ft-main-grid,
+  .stats-grid,
+  .metrics-grid,
+  .clubs-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  table, .data-table, .table, .events-table, .library-modern-table, .council-modern-table, .sports-modern-table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* -- Priority 12: Secondary Mobile UI Fixes -- */
+@media (max-width: 1024px) {
+  /* Prevent clipping of mobile dropdown on tablets */
+  .header-bottom-row {
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Prevent extreme cropping of Hero Banner images on narrow mobile screens */
+  .hero-slide-bg {
+    background-position: top center !important;
+  }
+  
+  /* Anchor Search Dropdown securely to viewport instead of header */
+  .search-dropdown {
+    position: fixed !important;
+    top: 92px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    border-radius: 0 0 12px 12px !important;
+  }
+}

@@ -161,79 +161,65 @@ export default function AEBStaffPage() {
             </div>
           </div>
 
-          {/* Main Table */}
-          <div style={{ background: 'var(--white)', borderRadius: '20px', overflow: 'hidden', boxShadow: 'var(--shadow-lift)', border: '1px solid var(--light-grey)' }}>
-            {/* Table Header */}
-            <div className="acc-table-row" style={{ display: 'grid', gridTemplateColumns: '60px 2.5fr 1.5fr 2.5fr 1.5fr', gap: '0', background: 'var(--navy)', padding: '1rem 2rem', alignItems: 'center' }}>
-              <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>S.No</div>
-              <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Name of The Faculty</div>
-              <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Designation</div>
-              <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px' }}>Role</div>
-              <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '1px', textAlign: 'right' }}>Mobile Number</div>
-            </div>
-
-            {/* Rows */}
-            {filteredStaff.length > 0 ? (
-              filteredStaff.map((m, i) => {
-                const badge = roleBadge[m.role] || { bg: 'rgba(10,22,40,0.06)', color: 'var(--navy)', icon: 'fa-user-tie' }
-                return (
-                  <div key={i} className="acc-table-row" style={{
-                    display: 'grid', gridTemplateColumns: '60px 2.5fr 1.5fr 2.5fr 1.5fr',
-                    gap: '0', padding: '1.3rem 2rem', alignItems: 'center',
-                    borderBottom: i < filteredStaff.length - 1 ? '1px solid var(--light-grey)' : 'none',
-                    background: 'transparent',
-                    transition: 'background 0.2s'
-                  }}
-                    onMouseEnter={e => e.currentTarget.style.background = 'var(--off-white)'}
-                    onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-                  >
-                    {/* SNo */}
-                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: '700' }}>{String(m.sno).padStart(2, '0')}</div>
-
-                    {/* Name */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <div style={{
-                        width: '40px', height: '40px', borderRadius: '50%',
-                        background: `linear-gradient(135deg, var(--navy), #1a4080)`,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        overflow: 'hidden', flexShrink: 0
-                      }}>
-                        <Avatar name={m.name} photo={m.photo} />
-                      </div>
-                      <div style={{ fontWeight: '800', fontSize: '0.98rem', color: 'var(--navy)' }}>{m.name}</div>
-                    </div>
-
-                    {/* Designation */}
-                    <div style={{ fontWeight: '700', fontSize: '0.88rem', color: '#4b5563', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      {m.designation}
-                    </div>
-
-                    {/* Role badge */}
-                    <div>
-                      <span style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '6px',
-                        background: badge.bg, color: badge.color,
-                        padding: '5px 14px', borderRadius: '20px',
-                        fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px'
-                      }}>
-                        <i className={`fa-solid ${badge.icon}`} style={{ fontSize: '0.6rem' }} />
-                        {m.role}
-                      </span>
-                    </div>
-
-                    {/* Mobile Number */}
-                    <div style={{ fontWeight: '800', fontSize: '0.9rem', color: 'var(--navy)', textAlign: 'right' }}>
-                      <i className="fa-solid fa-phone" style={{ marginRight: '6px', fontSize: '0.8rem', color: 'var(--vibrant-accent)' }} />
-                      {m.phone}
-                    </div>
-                  </div>
-                )
-              })
-            ) : (
-              <div style={{ padding: '3.5rem', textAlign: 'center', color: '#9ca3af', fontWeight: '700' }}>
-                No staff members found matching your search.
-              </div>
-            )}
+          <div className="data-table-container shadow-premium" style={{ marginTop: '2.5rem' }}>
+            <table className="data-table">
+              <thead>
+                <tr>
+                  <th style={{ width: '10%' }}>S.NO</th>
+                  <th style={{ width: '30%' }}>NAME OF THE FACULTY</th>
+                  <th style={{ width: '20%' }}>DESIGNATION</th>
+                  <th style={{ width: '25%' }}>ROLE</th>
+                  <th style={{ width: '15%' }}>MOBILE NUMBER</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredStaff.length > 0 ? (
+                  filteredStaff.map((m, i) => {
+                    const badge = roleBadge[m.role] || { bg: 'rgba(10,22,40,0.06)', color: 'var(--navy)', icon: 'fa-user-tie' }
+                    return (
+                      <tr key={i}>
+                        <td>{String(m.sno).padStart(2, '0')}</td>
+                        <td>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{
+                              width: '36px', height: '36px', borderRadius: '50%',
+                              background: `linear-gradient(135deg, var(--navy), #1a4080)`,
+                              display: 'flex', alignItems: 'center', justifyContent: 'center',
+                              overflow: 'hidden', flexShrink: 0
+                            }}>
+                              <Avatar name={m.name} photo={m.photo} />
+                            </div>
+                            <span className="bold text-navy">{m.name}</span>
+                          </div>
+                        </td>
+                        <td>{m.designation}</td>
+                        <td>
+                          <span style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '6px',
+                            background: badge.bg, color: badge.color,
+                            padding: '5px 14px', borderRadius: '20px',
+                            fontSize: '0.72rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px'
+                          }}>
+                            <i className={`fa-solid ${badge.icon}`} style={{ fontSize: '0.6rem' }} />
+                            {m.role}
+                          </span>
+                        </td>
+                        <td className="bold text-navy">
+                          <i className="fa-solid fa-phone" style={{ marginRight: '6px', fontSize: '0.8rem', color: 'var(--vibrant-accent)' }} />
+                          {m.phone}
+                        </td>
+                      </tr>
+                    )
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan="5" style={{ padding: '3.5rem', textAlign: 'center', color: '#9ca3af', fontWeight: '700' }}>
+                      No staff members found matching your search.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
