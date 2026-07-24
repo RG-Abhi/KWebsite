@@ -238,16 +238,16 @@ const INITIAL_DATA = {
     "🏆 Team ASHTOJ wins the Smart India Hackathon (SIH) 2025 Grand Finale.",
   ],
 
-  // All 8 hero slides matching original index.html
+  // All 8 hero slides using local fallback images
   heroSlides: [
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/SIH-Winners_2025.jpg', alt: 'Congratulations to Team ASHTOJ for winning SIH 2025!', unsplash: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Smart-India-Hackathon-2025.jpg', alt: 'Smart India Hackathon 2025', unsplash: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/24-hours-hacakthon-2025.jpg', alt: '24 Hours Hackathon 2025', unsplash: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Hyderabad Entrepreneurship Summit 2025.jpg', alt: 'Hyderabad Entrepreneurship Summit 2025', unsplash: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=1600' },
-    { src: "https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Navraas'25.jpg", alt: 'Navraas 2025', unsplash: 'https://images.unsplash.com/photo-1492538368677-f6e0afe31d90?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Independence-day-celebrations-2025.jpg', alt: 'INDEPENDENCE DAY CELEBRATIONS 2025', unsplash: 'https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/Gradution-Day-2025.jpg', alt: 'Graduation Day 2025', unsplash: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1600' },
-    { src: 'https://kmit.in/adminpanel/json_data/uploadImages/assets/banner/prakalp 2025 project expo-min.png', alt: 'Prakalp 2025 Project Expo', unsplash: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1600' },
+    { src: '/photos/banner/SIH-Winners_2025.jpg', alt: 'Congratulations to Team ASHTOJ for winning SIH 2025!', unsplash: '/photos/banner/SIH-Winners_2025.jpg' },
+    { src: '/photos/banner/Smart-India-Hackathon-2025.jpg', alt: 'Smart India Hackathon 2025', unsplash: '/photos/banner/Smart-India-Hackathon-2025.jpg' },
+    { src: '/photos/banner/24-hours-hacakthon-2025.jpg', alt: '24 Hours Hackathon 2025', unsplash: '/photos/banner/24-hours-hacakthon-2025.jpg' },
+    { src: '/photos/banner/Hyderabad%20Entrepreneurship%20Summit%202025.jpg', alt: 'Hyderabad Entrepreneurship Summit 2025', unsplash: '/photos/banner/Hyderabad%20Entrepreneurship%20Summit%202025.jpg' },
+    { src: "/photos/banner/Navraas'25.jpg", alt: 'Navraas 2025', unsplash: "/photos/banner/Navraas'25.jpg" },
+    { src: '/photos/banner/Independence-day-celebrations-2025.jpg', alt: 'INDEPENDENCE DAY CELEBRATIONS 2025', unsplash: '/photos/banner/Independence-day-celebrations-2025.jpg' },
+    { src: '/photos/banner/Gradution-Day-2025.jpg', alt: 'Graduation Day 2025', unsplash: '/photos/banner/Gradution-Day-2025.jpg' },
+    { src: '/photos/banner/prakalp%202025%20project%20expo-min.png', alt: 'Prakalp 2025 Project Expo', unsplash: '/photos/banner/prakalp%202025%20project%20expo-min.png' },
   ],
 
   // Stats bar — matches original index.html exactly
