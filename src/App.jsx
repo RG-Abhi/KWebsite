@@ -38,6 +38,8 @@ const ProtectedRoute = ({ children }) => {
   return isAuth ? children : <Navigate to="/login" />
 }
 
+const ENABLE_CHATBOT = false // Set to true to unhide the chatbot
+
 function Lazy({ children }) {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>
 }
@@ -178,9 +180,7 @@ function MainLayout() {
       <div className="mobile-menu-overlay" id="mobile-overlay" />
       <Header scrolled={scrolled} activeSection={activeSection} onNavigate={handleNavigate} />
       <Ticker scrolled={scrolled} />
-      <Lazy>
-        <Pages.ChatbotWidget />
-      </Lazy>
+      {ENABLE_CHATBOT && (`n        <Lazy>`n          <Pages.ChatbotWidget />`n        </Lazy>`n      )}
       <StickyContextualCTA />
 
       <div className={activeSection ? 'spa-view' : ''} ref={contentRef}>
@@ -380,3 +380,4 @@ export default function App() {
     </DataProvider>
   )
 }
+
