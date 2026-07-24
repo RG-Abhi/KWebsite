@@ -180,7 +180,11 @@ function MainLayout() {
       <div className="mobile-menu-overlay" id="mobile-overlay" />
       <Header scrolled={scrolled} activeSection={activeSection} onNavigate={handleNavigate} />
       <Ticker scrolled={scrolled} />
-      {ENABLE_CHATBOT && (`n        <Lazy>`n          <Pages.ChatbotWidget />`n        </Lazy>`n      )}
+      {ENABLE_CHATBOT && (
+        <Lazy>
+          <Pages.ChatbotWidget />
+        </Lazy>
+      )}
       <StickyContextualCTA />
 
       <div className={activeSection ? 'spa-view' : ''} ref={contentRef}>
