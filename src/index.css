@@ -8678,3 +8678,5 @@ table tbody tr:last-child td {
     border-radius: 0 0 12px 12px !important;
   }
 }
+
+.sync-status-banner { display: none !important; }
