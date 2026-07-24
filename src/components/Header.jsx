@@ -335,18 +335,6 @@ export default function Header({ scrolled, activeSection, onNavigate }) {
                   handleSearchClick={handleSearchClick}
                 />
               </li>
-              {/* Mobile-only Pay Fees CTA — pinned at bottom of drawer */}
-              <li className="nav-item mobile-pay-fees-item">
-                <a
-                  href="https://ssolive.myclassboard.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DDIL4KLQ05IV1JZOXCLM0%26redirect_uri%3Dhttps%253A%252F%252Ficici.myclassboard.com%252Fsso%252FCallback%26response_type%3Dcode%26scope%3Dopenid%2520profile%2520offline_access"
-                  className="mobile-pay-fees-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Pay Fees
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
