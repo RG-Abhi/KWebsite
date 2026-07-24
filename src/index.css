@@ -3468,21 +3468,11 @@ body.mobile-menu-active .mobile-menu-overlay { opacity: 1; visibility: visible; 
    ======================================== */
 
 /* Page wrapper */
-.sub-page { 
-  min-height: 100vh; 
-  padding-top: 132px; 
-  background: #f4f6f9; /* Match home page base grey */
-  position: relative;
-  z-index: 1;
-}
+.sub-page { min-height: 100vh; padding-top: 92px; background: #f4f6f9; position: relative; z-index: 1; }
 
-@media (max-width: 1024px) {
-  .sub-page { padding-top: 120px; }
-}
+@media (max-width: 1024px) { .sub-page { padding-top: 60px; } }
 
-@media (max-width: 640px) {
-  .sub-page { padding-top: 92px; }
-}
+@media (max-width: 640px) { .sub-page { padding-top: 60px; } }
 
 /* ─── Page Section Utilities (used across all SPA pages) ─── */
 .page-section {
@@ -8680,3 +8670,4 @@ table tbody tr:last-child td {
 }
 
 .sync-status-banner { display: none !important; }
+
